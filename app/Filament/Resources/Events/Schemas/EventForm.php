@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\Events\Schemas;
 
-use Filament\Forms\Components\DatePicker;
+
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\DatePicker;
 
 class EventForm
 {
@@ -12,14 +14,37 @@ class EventForm
     {
         return $schema
             ->components([
-                TextInput::make('icon')
-                    ->required(),
-                TextInput::make('title')
-                    ->required(),
-                DatePicker::make('date')
-                    ->required(),
-                TextInput::make('category')
-                    ->required(),
+                Select::make('icon')
+            ->label('Icon (Heroicon name)')
+            ->options([
+                'event' => 'Event',
+                'news' => 'News',
+                'announcement' => 'Announcement',
+                ])
+            ->placeholder('heroicon-o-calendar')
+            ->helperText('Example: heroicon-o-calendar')
+            ->required(),
+
+        TextInput::make('title')
+            ->label('Title')
+            ->placeholder('Enter title')
+            ->maxLength(255)
+            ->required(),
+
+        DatePicker::make('date')
+            ->label('Date')
+          ->required(),
+
+        Select::make('category')
+            ->label('Category')
+            ->options([
+                'event' => 'Event',
+                'news' => 'News',
+                'announcement' => 'Announcement',
+            ])
+            ->required(),
+
             ]);
+
     }
 }

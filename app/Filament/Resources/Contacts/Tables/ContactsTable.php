@@ -16,27 +16,27 @@ class ContactsTable
         return $table
             ->columns([
                 TextColumn::make('address1')
+                    ->label('Address One')
                     ->searchable(),
                 TextColumn::make('address2')
+                    ->label('Address Two')
                     ->searchable(),
                 TextColumn::make('place1')
+                    ->label('Place (One)')
                     ->searchable(),
                 TextColumn::make('place2')
+                    ->label('Address (Two)')
                     ->searchable(),
                 TextColumn::make('cell1')
+                    ->label('Phone Number')
                     ->searchable(),
                 TextColumn::make('cell2')
+                    ->label('Phone Number')
                     ->searchable(),
                 TextColumn::make('cell3')
+                ->label('Phone Number')
                     ->searchable(),
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+
             ])
             ->filters([
                 //
