@@ -9,6 +9,7 @@ use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Actions\DeleteAction;
 
 class NewsTable
 {
@@ -36,7 +37,7 @@ class NewsTable
                 ->limit(50)
                 ->wrap(),
         ])
-    
+
 
             ->filters([
                 //
@@ -44,6 +45,7 @@ class NewsTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
+                 DeleteAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

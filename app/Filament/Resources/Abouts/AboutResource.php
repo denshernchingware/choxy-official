@@ -54,9 +54,9 @@ class AboutResource extends Resource
     {
         return [
             'index' => ListAbouts::route('/'),
-            'create' => CreateAbout::route('/create'),
+           // 'create' => CreateAbout::route('/create'),
             //'view' => ViewAbout::route('/{record}'),
-            'edit' => EditAbout::route('/{record}/edit'),
+          //  'edit' => EditAbout::route('/{record}/edit'),
         ];
     }
 }

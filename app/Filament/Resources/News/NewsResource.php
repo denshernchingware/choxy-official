@@ -47,9 +47,9 @@ class NewsResource extends Resource
     {
         return [
             'index' => ListNews::route('/'),
-            'create' => CreateNews::route('/create'),
-            'view' => ViewNews::route('/{record}'),
-            'edit' => EditNews::route('/{record}/edit'),
+            // 'create' => CreateNews::route('/create'),
+            // 'view' => ViewNews::route('/{record}'),
+            // 'edit' => EditNews::route('/{record}/edit'),
         ];
     }
 }

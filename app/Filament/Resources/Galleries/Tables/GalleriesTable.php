@@ -9,6 +9,7 @@ use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Actions\DeleteAction;
 
 class GalleriesTable
 {
@@ -17,9 +18,22 @@ class GalleriesTable
         return $table
             ->columns([
                 TextColumn::make('category')
-                    ->searchable(),
-                ImageColumn::make('image'),
-                TextColumn::make('created_at')
+                ->label('Category')
+                ->searchable()
+                ->badge()
+                ->color(fn (string $state): string => match ($state) {
+                    'solar' => 'primary',
+                    'design' => 'success',
+                    'software' => 'warning',
+                    default => 'gray',
+                }),
+
+                ImageColumn::make('image')
+                ->label('Photo')
+                ->disk('uploads')
+                ->width(60),
+
+                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -27,6 +41,7 @@ class GalleriesTable
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
             ])
             ->filters([
                 //
@@ -34,6 +49,7 @@ class GalleriesTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

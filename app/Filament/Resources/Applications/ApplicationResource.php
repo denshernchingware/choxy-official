@@ -53,9 +53,9 @@ class ApplicationResource extends Resource
     {
         return [
             'index' => ListApplications::route('/'),
-            'create' => CreateApplication::route('/create'),
-            'view' => ViewApplication::route('/{record}'),
-            'edit' => EditApplication::route('/{record}/edit'),
+            //'create' => CreateApplication::route('/create'),
+           // 'view' => ViewApplication::route('/{record}'),
+           // 'edit' => EditApplication::route('/{record}/edit'),
         ];
     }
 }

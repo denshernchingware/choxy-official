@@ -22,7 +22,7 @@ class SubjectResource extends Resource
 
      public static function getModelLabel(): string
     {
-        return 'Subjects Offered';
+        return 'Subjects';
     }
 
     public static function form(Schema $schema): Schema
@@ -46,8 +46,8 @@ class SubjectResource extends Resource
     {
         return [
             'index' => ListSubjects::route('/'),
-            'create' => CreateSubject::route('/create'),
-            'edit' => EditSubject::route('/{record}/edit'),
+           // 'create' => CreateSubject::route('/create'),
+          //  'edit' => EditSubject::route('/{record}/edit'),
         ];
     }
 }

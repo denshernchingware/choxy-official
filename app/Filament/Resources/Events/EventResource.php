@@ -47,9 +47,9 @@ class EventResource extends Resource
     {
         return [
             'index' => ListEvents::route('/'),
-            'create' => CreateEvent::route('/create'),
-            'view' => ViewEvent::route('/{record}'),
-            'edit' => EditEvent::route('/{record}/edit'),
+            // 'create' => CreateEvent::route('/create'),
+            // 'view' => ViewEvent::route('/{record}'),
+            // 'edit' => EditEvent::route('/{record}/edit'),
         ];
     }
 }

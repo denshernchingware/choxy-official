@@ -53,9 +53,9 @@ class GalleryResource extends Resource
     {
         return [
             'index' => ListGalleries::route('/'),
-            'create' => CreateGallery::route('/create'),
-            'view' => ViewGallery::route('/{record}'),
-            'edit' => EditGallery::route('/{record}/edit'),
+            // 'create' => CreateGallery::route('/create'),
+            // 'view' => ViewGallery::route('/{record}'),
+            // 'edit' => EditGallery::route('/{record}/edit'),
         ];
     }
 }

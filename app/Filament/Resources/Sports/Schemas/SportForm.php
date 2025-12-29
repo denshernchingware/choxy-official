@@ -14,13 +14,23 @@ class SportForm
         return $schema
             ->components([
                 TextInput::make('title')
-                    ->required(),
+                    ->label('Title')
+                    ->required()
+                    ->maxLength(255),
+
                 Textarea::make('description')
+                    ->label('Description')
                     ->required()
                     ->columnSpanFull(),
+                    
                 FileUpload::make('image')
+                    ->label('Sports Photo')
                     ->image()
-                    ->required(),
+                    ->required()
+                    ->downloadable()
+                    ->disk('uploads')
+                    ->directory('/')
+                    ->helperText('600 x  600 commended'),
             ]);
     }
 }
