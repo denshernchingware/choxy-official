@@ -52,9 +52,9 @@ class ValueResource extends Resource
     {
         return [
             'index' => ListValues::route('/'),
-            'create' => CreateValue::route('/create'),
+          //  'create' => CreateValue::route('/create'),
           //  'view' => ViewValue::route('/{record}'),
-            'edit' => EditValue::route('/{record}/edit'),
+            //'edit' => EditValue::route('/{record}/edit'),
         ];
     }
 }

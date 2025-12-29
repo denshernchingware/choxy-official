@@ -1,0 +1,471 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>Crafto - The Multipurpose HTML5 Template</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="ThemeZaa">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description"
+        content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 56+ ready demos.">
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <!-- google fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- style sheets and font icons -->
+    <link rel="stylesheet" href="css/vendors.min.css" />
+    <link rel="stylesheet" href="css/icon.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="demos/elearning/elearning.css" />
+</head>
+
+<body data-mobile-nav-trigger-alignment="right" data-mobile-nav-style="modern" data-mobile-nav-bg-color="#313e3b">
+    <!-- start header -->
+    <header>
+        <!-- start navigation -->
+        <nav class="navbar navbar-expand-lg header-transparent bg-transparent header-reverse" data-header-hover="light">
+            <div class="container-fluid">
+                <div class="col-auto col-lg-2 me-lg-0 me-auto">
+                    <a class="navbar-brand p-0" href="demo-elearning.html">
+                        <img src="images/logo.png" data-at2x="images/logo.png" alt=""
+                            class="default-logo pt-10">
+                        <img src="images/logo.png" data-at2x="images/logo.png" alt="" class="alt-logo w-70px">
+                        <img src="images/logo.png" data-at2x="images/logo.png" alt="" class="mobile-logo ">
+                    </a>
+                </div>
+                <div class="col-auto menu-order position-static">
+                    <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav alt-font">
+                            <li class="nav-item"><a href="demo-elearning.html" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="demo-elearning-about.html" class="nav-link">About</a></li>
+                            <li class="nav-item"><a href="demo-elearning-courses-details.html"
+                                    class="nav-link">Academics</a></li>
+                            <li class="nav-item"><a href="demo-elearning-instructors.html"
+                                    class="nav-link">Admissions</a></li>
+                            <li class="nav-item"><a href="demo-elearning-testimonial.html" class="nav-link">School
+                                    Life</a></li>
+                            <li class="nav-item"><a href="demo-elearning-blog.html" class="nav-link">News And Events</a>
+                            </li>
+                            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                            <li class="nav-item"><a href="demo-elearning-contact.html" class="nav-link">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto col-lg-2 text-end d-none d-sm-flex">
+                    <div class="header-icon">
+                        <div>
+                            <div class="alt-font fw-500 lg-fs-15"><a href="tel:263776746817"
+                                    class="widget-text text-white-hover"><i
+                                        class="feather icon-feather-phone-call me-10px lg-me-5px"></i> +263 776 746
+                                    817</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- end navigation -->
+    </header>
+    <!-- end header -->
+    <!-- start page title -->
+    <section class="ipad-top-space-margin bg-dark-gray cover-background page-title-big-typography"
+        style="background-image: url(images/adm-main.png)">
+        <div class="background-position-center-top h-100 w-100 position-absolute left-0px top-0"
+            style="background-image: url('images/vertical-line-bg-small.svg')"></div>
+        <div id="particles-style-01" class="h-100 position-absolute left-0px top-0 w-100" data-particle="true"
+            data-particle-options='{"particles": {"number": {"value": 8,"density": {"enable": true,"value_area": 2000}},"color": {"value": ["#d5d52b", "#d5d52b", "#d5d52b", "#d5d52b", "#d5d52b"]},"shape": {"type": "circle","stroke":{"width":0,"color":"#000000"}},"opacity": {"value": 1,"random": false,"anim": {"enable": false,"speed": 1,"sync": false}},"size": {"value": 8,"random": true,"anim": {"enable": false,"sync": true}},"line_linked":{"enable":false,"distance":0,"color":"#ffffff","opacity":1,"width":1},"move": {"enable": true,"speed":1,"direction": "right","random": false,"straight": false}},"interactivity": {"detect_on": "canvas","events": {"onhover": {"enable": false,"mode": "repulse"},"onclick": {"enable": false,"mode": "push"},"resize": true}},"retina_detect": false}'>
+        </div>
+        <div class="container">
+            <div class="row align-items-center extra-small-screen">
+                <div class="col-xl-6 col-lg-7 col-md-8 col-sm-9 position-relative page-title-extra-small"
+                    data-anime='{ "el": "childs", "translateY": [-15, 0], "perspective": [1200,1200], "scale": [1.1, 1], "rotateX": [50, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    <h1 class="mb-20px alt-font text-base-color">Admissions</h1>
+                    <h2 class="fw-500 m-0 ls-minus-2px text-white alt-font">Join Our Community</h2>
+                    <p class="text-white">Begin your journey to excellence at Choxy Dee Academy. Applications for Form
+                        1 are now open.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end page title -->
+
+    <!-- Admission Requirements Section -->
+    <section class="admissions-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="alt-font text-dark-gray fw-600 ls-minus-3px mx-auto">Admission Requirements</h2>
+                <p class="section-subtitle text-base-color">Ensure you have the following documents and meet the
+                    requirements before applying.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Grade 7 Result Slip -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="req-card">
+                        <div class="req-icon-wrapper">
+                            <i class="bi bi-file-earmark-text req-icon"></i>
+                        </div>
+                        <h4 class="req-title">Grade 7 Result Slip</h4>
+                        <p class="req-desc">Must have 6 to 20 units for consideration.</p>
+                    </div>
+                </div>
+
+                <!-- Birth Certificate -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="req-card">
+                        <div class="req-icon-wrapper">
+                            <i class="bi bi-card-heading req-icon"></i>
+                        </div>
+                        <h4 class="req-title">Birth Certificate</h4>
+                        <p class="req-desc">A clear copy of the student's birth certificate.</p>
+                    </div>
+                </div>
+
+                <!-- Registration Fee -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="req-card">
+                        <div class="req-icon-wrapper">
+                            <i class="bi bi-currency-dollar req-icon"></i>
+                        </div>
+                        <h4 class="req-title">Registration Fee</h4>
+                        <p class="req-desc">$20 non-refundable registration fee.</p>
+                    </div>
+                </div>
+
+                <!-- Assessment Exam -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="req-card">
+                        <div class="req-icon-wrapper">
+                            <i class="bi bi-check-circle req-icon"></i>
+                        </div>
+                        <h4 class="req-title">Assessment Exam</h4>
+                        <p class="req-desc">All applicants must sit for an examination.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="text-center mb-5 ">
+                <h2 class="alt-font text-dark-gray fw-600 ls-minus-3px mx-auto">Application Process</h2>
+                <p class="section-subtitle">Follow these simple steps to complete your application</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Step 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">1</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Submit Application</h4>
+                        <p class="timeline-desc">Fill out the online application form below.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">2</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Submit Documents</h4>
+                        <p class="timeline-desc">Provide required documents at the school.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">3</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Pay Registration Fee</h4>
+                        <p class="timeline-desc">Pay the $20 non-refundable fee.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">4</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Assessment Exam</h4>
+                        <p class="timeline-desc">Sit for the placement assessment.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">5</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Receive Results</h4>
+                        <p class="timeline-desc">Get notified of admission decision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+
+    <!-- Application Form Section -->
+    <section class="form-section">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Form Column -->
+                <div class="col-lg-8">
+                    <div class="form-card">
+                        <div class="form-header ">
+                            <i class="bi bi-file-earmark-text me-2"></i> Application Form
+                        </div>
+                        <div class="p-4 p-md-5">
+                            <form>
+                                <!-- Row 1 -->
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <label for="studentName" class="form-label required">Student Full Name</label>
+                                        <input type="text" class="form-control" id="studentName"
+                                            placeholder="Enter student's full name" required>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label for="dob" class="form-label required">Date of Birth</label>
+                                        <input type="date" class="form-control" id="dob" required>
+                                    </div>
+                                </div>
+
+                                <!-- Row 2 -->
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <label for="gender" class="form-label required">Gender</label>
+                                        <select class="form-select" id="gender" required>
+                                            <option selected disabled>Select gender</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="previousSchool" class="form-label required">Previous
+                                            School</label>
+                                        <input type="text" class="form-control" id="previousSchool"
+                                            placeholder="Enter previous school name" required>
+                                    </div>
+                                </div>
+
+                                <!-- Row 3 -->
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <label for="guardianName" class="form-label required">Parent/Guardian
+                                            Name</label>
+                                        <input type="text" class="form-control" id="guardianName"
+                                            placeholder="Enter guardian's full name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label required">Phone Number</label>
+                                        <input type="text" class="form-control" id="phone"
+                                            placeholder="e.g. 0775 746 617" required>
+                                    </div>
+                                </div>
+
+                                <!-- Row 4 -->
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email"
+                                            placeholder="Enter email address">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="grade7Units" class="form-label required">Grade 7 Units</label>
+                                        <input type="number" class="form-control" id="grade7Units"
+                                            placeholder="Enter total units (6-20)" min="6" max="20"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <!-- Residential Address -->
+                                <div class="mb-4">
+                                    <label for="address" class="form-label required">Residential Address</label>
+                                    <textarea class="form-control" id="address" rows="3" placeholder="Enter full residential address" required></textarea>
+                                </div>
+
+                                <!-- Additional Information -->
+                                <div class="mb-4">
+                                    <label for="additionalInfo" class="form-label">Additional Information</label>
+                                    <textarea class="form-control" id="additionalInfo" rows="4"
+                                        placeholder="Any additional information you'd like to share"></textarea>
+                                </div>
+
+                                <!-- Agreement Checkbox -->
+                                <div class="mb-4 form-check">
+                                    <input type="checkbox" class="form-check-input" id="agreement" required>
+                                    <label class="form-check-label checkbox-text" for="agreement">
+                                        <i class="bi bi-info-circle me-1 text-base-color"></i>
+                                        By submitting this form, you confirm that all information provided is accurate
+                                        and agree to the school's admission policies.
+                                    </label>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="text-center ">
+                                    <button type="submit" class="btn btn-submit text-black bg-base-color">Submit
+                                        Application</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Column -->
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <h5>Need Help?</h5>
+                        <p>Contact our admissions team for any questions or assistance with your application.</p>
+
+                        <div class="contact-item">
+                            <i class="bi bi-telephone-forward me-2"></i>
+                            <a href="tel:+263775746617">0775 746 617</a><br>
+                            <i class="bi bi-telephone-forward ms-4 me-2"></i>
+                            <a href="tel:+263778550367">0778 550 367</a>
+                        </div>
+
+                        <div class="contact-item mb-4">
+                            <i class="bi bi-envelope me-2"></i>
+                            <a href="mailto:info@choxydee.ac.zw">info@choxydee.ac.zw</a>
+                        </div>
+
+                        <h5 class="mt-5">Key Contacts</h5>
+
+                        <div class="key-contact">
+                            <strong>Mr. Marufu</strong><br>
+                            <small>Principal</small>
+                        </div>
+
+                        <div class="key-contact">
+                            <strong>Mrs. Moyo</strong><br>
+                            <small>Administration</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- start footer -->
+    <!-- start footer -->
+    <section class="cta-section text-center">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-3">Ready to Join Choxy Dee Academy?</h2>
+            <p class="lead mb-5">Start your journey towards excellence. Applications for Form 1 are now open.</p>
+            <div>
+                <a href="#" class="btn btn-warning rounded-pill px-5 py-3 fw-bold me-3">Apply Now</a>
+                <a href="#" class="btn btn-outline-light rounded-pill px-5 py-3 fw-bold">Schedule a Visit</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Logo & Description -->
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="images/logo.png" alt="Choxy Dee Academy Logo" class="logo-img me-3">
+                        <div>
+                            <h5 class="fw-bold text-white mb-0">Choxy Dee Academy</h5>
+                            <small class="text-white">Striving for Excellence</small>
+                        </div>
+                    </div>
+                    <p class="small">
+                        A private secondary school dedicated to nurturing excellence through quality education,
+                        discipline, and innovation.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="text-white fw-bold mb-4">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">About Us</a></li>
+                        <li class="mb-2"><a href="#">Academics</a></li>
+                        <li class="mb-2"><a href="#">Admissions</a></li>
+                        <li class="mb-2"><a href="#">School Life</a></li>
+                        <li class="mb-2"><a href="#">Gallery</a></li>
+                        <li class="mb-2"><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="text-white fw-bold mb-4">Contact Us</h6>
+                    <p class="mb-2"><i class="bi bi-telephone me-2 text-warning"></i>0775 746 617<br><i
+                            class="bi bi-telephone me-2 text-warning"></i> 0778 550 367 <br> <i
+                            class="bi bi-telephone me-2 text-warning"></i>0719 746 617</p>
+                    <p class="mb-2"><i class="bi bi-envelope me-2 text-warning"></i> info@choxydeeacademy.co.zw</p>
+                    <p class="mb-2"><i class="bi bi-geo-alt me-2 text-warning"></i> 11331 Glen Norah C, Masimbi</p>
+                    <p class="mb-2"><i class="bi bi-geo-alt me-2 text-warning"></i> 5223 Southly Park, Magetsi</p>
+                </div>
+
+                <!-- Connect With Us -->
+                <div class="col-lg-3">
+                    <h6 class="text-white fw-bold mb-4">Connect With Us</h6>
+                    <p class="small mb-3 text-white-50">
+                        Follow us on social media for updates and news.
+                    </p>
+
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-4" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="text-white fs-4" aria-label="X (Twitter)">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="#" class="text-white fs-4" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white fs-4" aria-label="YouTube">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="my-4 border-secondary">
+
+            <div class="text-center small">
+                &copy; 2025 Choxy Dee Academy. All rights reserved.
+            </div>
+            <div class="text-center small">
+                Crafted by <a href="https://www.dmtechnologies.co.zw/" class="text-white text-decoration-line-bottom "
+                    target="_blank">DMTechnologies</a>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <!-- end footer -->
+    <!-- start scroll progress -->
+    <div class="scroll-progress d-none d-xxl-block">
+        <a href="#" class="scroll-top" aria-label="scroll">
+            <span class="scroll-text">Scroll</span><span class="scroll-line"><span
+                    class="scroll-point"></span></span>
+        </a>
+    </div>
+    <!-- end scroll progress -->
+    <!-- javascript libraries -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/vendors.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

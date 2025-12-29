@@ -47,9 +47,9 @@ class SportResource extends Resource
     {
         return [
             'index' => ListSports::route('/'),
-            'create' => CreateSport::route('/create'),
-            'view' => ViewSport::route('/{record}'),
-            'edit' => EditSport::route('/{record}/edit'),
+            // 'create' => CreateSport::route('/create'),
+            // 'view' => ViewSport::route('/{record}'),
+            // 'edit' => EditSport::route('/{record}/edit'),
         ];
     }
 }
