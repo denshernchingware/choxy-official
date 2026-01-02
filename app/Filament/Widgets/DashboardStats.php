@@ -19,12 +19,13 @@ class DashboardStats extends StatsOverviewWidget
                 '$ ' . number_format(Receipt::sum('total'), 2)
             )
             ->color('warning')
-            
+
             ->description('All-time receipts total'),
 
             Stat::make('Receipts', Receipt::count())
                 ->icon('heroicon-o-receipt-refund')
-                ->color('success'),
+                ->color('info')
+                 ->description('Number of Receipts Generated'),
 
             // Stat::make(
             //     'Total Emails',
@@ -41,11 +42,13 @@ class DashboardStats extends StatsOverviewWidget
 
             Stat::make('Events', Event::count())
                 ->icon('heroicon-o-calendar-days')
+                ->description('Number of all events')
                 ->color('success'),
 
             Stat::make('Subjects', Subject::count())
                 ->icon('heroicon-o-book-open')
-                ->color('primary'),
+                ->description('Total Number of subjects')
+                ->color('danger'),
 
 
         ];

@@ -167,12 +167,32 @@
     font-weight: bold;
     color: #003366;
 }
+/* WATERMARK */
+        .watermark {
+            position: absolute;
+            top: 280px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .watermark img {
+            width: 350px;
+            height: auto;
+        }
+        .amt-cl{
+            color: #666;
+        }
 
 
     </style>
 </head>
 
 <body>
+    <div class="watermark">
+        <img src="{{ public_path('images/logo.png') }}">
+    </div>
 <div class="receipt">
 
     <!-- Header -->
@@ -207,7 +227,7 @@
                 </td>
                 <td class="amount-words">
                     <strong>Amount in Words</strong>
-                    {{ strtoupper($receipt->amount_words) }}
+                    <span class="amt-cl"> {{ strtoupper($receipt->amount_words) }} </span>
                 </td>
             </tr>
         </table>

@@ -6,7 +6,7 @@
 
     <style>
         body {
-            font-family: DejaVu Sans, Arial, sans-serif;
+            font-family:sans-serif;
             background: #f3f4f6;
         }
 
@@ -34,7 +34,7 @@
 
         /* HEADER */
        .header {
-    background: #242e45;
+    background: #003366;
     color: #fff;
     padding: 20px 15px;
     position: relative;
@@ -124,10 +124,11 @@
         }
 
         .divider {
-            border-bottom: 2px solid #000;
+            border-bottom: 20px solid  #003366;
             margin: 15px 10px;
             position: relative;
             z-index: 1;
+
         }
     </style>
 </head>
