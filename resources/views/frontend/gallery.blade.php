@@ -2,7 +2,7 @@
 @section('content')
     <!-- start page title -->
     <section class="ipad-top-space-margin bg-dark-gray cover-background page-title-big-typography"
-        style="background-image: url(images/gallery.png)">
+        style="background-image: url('{{asset("images/gallery.png")}}')">
         <div class="background-position-center-top h-100 w-100 position-absolute left-0px top-0"
             style="background-image: url('images/vertical-line-bg-small.svg')"></div>
         <div id="particles-style-01" class="h-100 position-absolute left-0px top-0 w-100" data-particle="true"
