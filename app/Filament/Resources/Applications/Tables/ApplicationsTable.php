@@ -9,6 +9,7 @@ use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Filament\Actions\DeleteAction;
+use Filament\Actions\Action;
 
 class ApplicationsTable
 {
@@ -79,7 +80,13 @@ class ApplicationsTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
-                DeleteAction::make()
+                DeleteAction::make(),
+                 Action::make('download')
+                    ->label('Download')
+                    ->icon('heroicon-o-arrow-down-tray')
+                    ->color('primary')
+                    ->url(fn ($record) => route('applications.download', $record))
+                   // ->openUrlInNewTab(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

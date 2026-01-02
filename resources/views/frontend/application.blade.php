@@ -215,9 +215,17 @@
         </div>
     </section>
     <!-- end section -->
+@if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert" id="successAlert">
+        <strong>Success!</strong> {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+@endif
+
 
     <!-- Application Form Section -->
-    <section class="form-section">
+    <section class="form-section" id="application">
         <div class="container">
             <div class="row g-5">
                 <!-- Form Column -->
@@ -227,18 +235,19 @@
                             <i class="bi bi-file-earmark-text me-2"></i> Application Form
                         </div>
                         <div class="p-4 p-md-5">
-                            <form>
+                        <form action="{{ route('application') }}" method="POST">
+                            @csrf
                                 <!-- Row 1 -->
                                 <div class="row mb-4">
                                     <div class="col-md-6">
                                         <label for="studentName" class="form-label required">Student Full Name</label>
-                                        <input type="text" class="form-control" id="studentName"
+                                        <input type="text" class="form-control" id="studentName " name='name'
                                             placeholder="Enter student's full name" required>
                                     </div>
-                                    
+
                                     <div class="col-md-6">
                                         <label for="dob" class="form-label required">Date of Birth</label>
-                                        <input type="date" class="form-control" id="dob" required>
+                                        <input type="date" class="form-control" name="date_of_birth" id="dob" required>
                                     </div>
                                 </div>
 
@@ -246,7 +255,7 @@
                                 <div class="row mb-4">
                                     <div class="col-md-6">
                                         <label for="gender" class="form-label required">Gender</label>
-                                        <select class="form-select" id="gender" required>
+                                        <select class="form-select" id="gender" name="gender" required>
                                             <option selected disabled>Select gender</option>
                                             <option>Male</option>
                                             <option>Female</option>
@@ -257,7 +266,7 @@
                                         <label for="previousSchool" class="form-label required">Previous
                                             School</label>
                                         <input type="text" class="form-control" id="previousSchool"
-                                            placeholder="Enter previous school name" required>
+                                            placeholder="Enter previous school name"  name="previous_school" required>
                                     </div>
                                 </div>
 
@@ -267,11 +276,11 @@
                                         <label for="guardianName" class="form-label required">Parent/Guardian
                                             Name</label>
                                         <input type="text" class="form-control" id="guardianName"
-                                            placeholder="Enter guardian's full name" required>
+                                            placeholder="Enter guardian's full name" name="guardian_name" required>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="phone" class="form-label required">Phone Number</label>
-                                        <input type="text" class="form-control" id="phone"
+                                        <input type="text" class="form-control" id="phone" name="phone"
                                             placeholder="e.g. 0775 746 617" required>
                                     </div>
                                 </div>
@@ -280,12 +289,12 @@
                                 <div class="row mb-4">
                                     <div class="col-md-6">
                                         <label for="email" class="form-label">Email Address</label>
-                                        <input type="email" class="form-control" id="email"
+                                        <input type="email" class="form-control" id="email" name="email"
                                             placeholder="Enter email address">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="grade7Units" class="form-label required">Grade 7 Units</label>
-                                        <input type="number" class="form-control" id="grade7Units"
+                                        <input type="number" class="form-control" id="grade7Units" name="results"
                                             placeholder="Enter total units (6-20)" min="6" max="20"
                                             required>
                                     </div>
@@ -294,13 +303,13 @@
                                 <!-- Residential Address -->
                                 <div class="mb-4">
                                     <label for="address" class="form-label required">Residential Address</label>
-                                    <textarea class="form-control" id="address" rows="3" placeholder="Enter full residential address" required></textarea>
+                                    <textarea class="form-control" id="address"  name="address" rows="3" placeholder="Enter full residential address" required></textarea>
                                 </div>
 
                                 <!-- Additional Information -->
                                 <div class="mb-4">
                                     <label for="additionalInfo" class="form-label">Additional Information</label>
-                                    <textarea class="form-control" id="additionalInfo" rows="4"
+                                    <textarea class="form-control" id="additionalInfo" rows="4" name="additional_information"
                                         placeholder="Any additional information you'd like to share"></textarea>
                                 </div>
 
@@ -466,6 +475,14 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/vendors.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        setTimeout(() => {
+            const alert = document.getElementById('successAlert');
+            if (alert) {
+                new bootstrap.Alert(alert).close();
+            }
+        }, 5000);
+    </script>
 </body>
 
 </html>
