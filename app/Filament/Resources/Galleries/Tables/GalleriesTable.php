@@ -22,10 +22,9 @@ class GalleriesTable
                 ->searchable()
                 ->badge()
                 ->color(fn (string $state): string => match ($state) {
-                    'solar' => 'primary',
-                    'design' => 'success',
-                    'software' => 'warning',
-                    default => 'gray',
+                    'admission' => 'primary',
+                    'academic' => 'success',
+
                 }),
 
                 ImageColumn::make('image')

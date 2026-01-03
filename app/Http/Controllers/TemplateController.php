@@ -6,10 +6,16 @@ use App\Mail\ContactMail;
 use App\Models\About;
 use App\Models\Application;
 use App\Models\Email;
+use App\Models\Event;
+use App\Models\Gallery;
+use App\Models\News;
+use App\Models\Sport;
 use App\Models\Subject;
+use App\Models\Value;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Mail;
+
 
 class TemplateController extends Controller
 {
@@ -97,16 +103,19 @@ class TemplateController extends Controller
 
     public function home()
     {
+        $events = Event::latest()->take(3)->get();
+        $news = News::latest()->take(3)->get();
         $subjects = Subject::all();
         $abouts = About::all();
-        return view('frontend.home', compact('abouts', 'subjects'));
+        return view('frontend.home', compact('abouts', 'subjects', 'news', 'events'));
     }
 
     public function about()
     {
+        $values = Value::all();
         $subjects = Subject::all();
         $abouts = About::all();
-        return view('frontend.about' ,compact('abouts', 'subjects'));
+        return view('frontend.about' ,compact('abouts', 'subjects', 'values'));
     }
 
     public function contact()
@@ -116,7 +125,8 @@ class TemplateController extends Controller
 
     public function gallery()
     {
-        return view('frontend.gallery');
+        $photos = Gallery::all();
+        return view('frontend.gallery' , compact('photos'));
     }
 
     public function admission()
@@ -126,11 +136,14 @@ class TemplateController extends Controller
 
     public function newsEvents()
     {
-        return view('frontend.newsEvents');
+        $events = Event::all();
+        $news = News::all();
+        return view('frontend.newsEvents' , compact('news', 'events'));
     }
 
     public function schoolLife()
     {
-        return view('frontend.schoolLife');
+        $sports = Sport::all();
+        return view('frontend.schoolLife' ,compact('sports', ));
     }
 }

@@ -25,116 +25,125 @@
         </div>
     </section>
     <!-- end page title -->
-    <!-- start section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <!-- Latest News -->
-                <div class="col-lg-8">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h3 class="alt-font text-dark-gray fw-600 ls-minus-3px mx-auto">Latest News</h3>
+ <section class="py-5 bg-light">
+    <div class="container">
 
-                    </div>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="alt-font text-dark-gray fw-600 ls-minus-3px">
+                News
+            </h3>
 
-                    <div class="row g-4">
-                        <!-- News Item 1 -->
-                        <div class="col-md-4">
-                            <div class="card border-0 shadow-sm news-card">
-                                <img src="images/registration.png" class="card-img-top"
-                                    alt="Students learning in classroom">
-                                <div class="card-body">
-                                    <p class="text-muted small mb-2">January 15, 2025</p>
-                                    <h5 class="alt-font-one text-dark-gray fw-600  mx-auto mb-0">Term 1 Registration
-                                        Now Open</h5>
-                                    <p class="card-text text-muted small ">
-                                        Applications for Form 1 are now being accepted for the upcoming academic...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+        </div>
 
+        <div class="row g-4">
+@forelse ($news as $new)
+<div class="col-md-4">
+    <div class="card border-0 shadow-sm h-100 news-card">
+        <img src="{{ asset('uploads/' . $new->image) }}" class="card-img-top" alt="{{ $new->title }}">
 
-                        <!-- News Item 2 -->
-                        <div class="col-md-4">
-                            <div class="card border-0 shadow-sm news-card">
-                                <img src="images/sports.jpg" class="card-img-top" alt="Inter-School Sports Day">
-                                <div class="card-body">
-                                    <p class="text-muted small mb-2">December 10, 2024</p>
-                                    <h5 class="alt-font-one text-dark-gray fw-600  mx-auto mb-0">Inter-School Sports
-                                        Day Success</h5>
-                                    <p class="card-text text-muted small">
-                                        Our students excelled at the district sports competition, winning multiple...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+        <div class="card-body d-flex flex-column">
+            <p class="text-muted small mb-2">
+                {{ \Carbon\Carbon::parse($new->date)->format('F d, Y') }}
+            </p>
 
-                        <!-- News Item 3 -->
-                        <div class="col-md-4">
-                            <div class="card border-0 shadow-sm news-card">
-                                <img src="images/education.png" class="card-img-top"
-                                    alt="Academic Excellence Awards">
-                                <div class="card-body">
-                                    <p class="text-muted small mb-2">November 28, 2024</p>
-                                    <h5 class="alt-font-one text-dark-gray fw-600  mx-auto mb-0">Academic Excellence
-                                        Awards</h5>
-                                    <p class="card-text text-muted small">
-                                        Celebrating our top performers from the 2024 examination results.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <h5 class="fw-600 text-dark-gray mb-2">
+                {{ $new->title }}
+            </h5>
 
-                <!-- Upcoming Events -->
-                <div class="col-lg-4 sm-mt-4">
-                    <h3 class="alt-font text-dark-gray fw-600 ls-minus-3px mx-auto">Upcoming Events</h3>
+            <p class="text-muted small news-text">
+                <span class="short-text">
+                    {{ Str::limit($new->information, 120) }}
+                </span>
+                <span class="full-text d-none">
+                    {{ $new->information }}
+                </span>
+            </p>
 
-                    <div class="event-item d-flex align-items-center">
-                        <i class="bi bi-calendar-event fs-3 text-base-color me-3"></i>
-                        <div class="flex-grow-1">
-                            <p class="mb-1"><strong>Open Day</strong></p>
-                            <p class="text-dark-gray mb-1">Jan 25, 2025</p>
-                        </div>
-                        <span class="badge bg-base-color text-dark event-badge">Admissions</span>
-                    </div>
+            @if (strlen($new->information) > 120)
+                <button
+                    type="button"
+                    class="btn btn-link p-0 text-base-color fw-bold mt-auto"
+                    onclick="toggleNews(this)">
+                    View more
+                </button>
+            @endif
+        </div>
+    </div>
+</div>
 
-                    <div class="event-item d-flex align-items-center">
-                        <i class="bi bi-calendar-event fs-3 text-base-color me-3"></i>
-                        <div class="flex-grow-1">
-                            <p class="mb-1"><strong>Term 1 Begins</strong></p>
-                            <p class="text-dark-gray mb-1">Feb 3, 2025</p>
-                        </div>
-                        <span class="badge bg-light text-dark event-badge border">Academic</span>
-                    </div>
-
-                    <div class="event-item d-flex align-items-center">
-                        <i class="bi bi-calendar-event fs-3 text-base-color me-3"></i>
-                        <div class="flex-grow-1">
-                            <p class="mb-1"><strong>Parents Meeting</strong></p>
-                            <p class="text-dark-gray mb-1">Feb 15, 2025</p>
-                        </div>
-                        <span class="badge bg-light text-dark event-badge border">Community</span>
-                    </div>
-
-                    <div class="event-item d-flex align-items-center">
-                        <i class="bi bi-calendar-event fs-3 text-base-color me-3"></i>
-                        <div class="flex-grow-1">
-                            <p class="mb-1"><strong>Sports Day</strong></p>
-                            <p class="text-dark-gray mb-1">Mar 8, 2025</p>
-                        </div>
-                        <span class="badge bg-light text-dark event-badge border">Sports</span>
-                    </div>
-
-                    <div>
+@empty
+<div class="col-12 text-center py-5">
+    <i class="bi bi-newspaper fs-1 text-muted d-block mb-2"></i>
+    <h5>No News Yet</h5>
+    <p class="text-muted small">Please check back later for updates.</p>
+</div>
+@endforelse
 
 
-                    </div>
-                </div>
+
+
+    </div>
+</section>
+
+<section class="py-5 bg-white">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="alt-font text-dark-gray fw-600 ls-minus-3px">
+                Upcoming Events
+            </h3>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+              @forelse ($events as $item)
+    <div class="event-item d-flex align-items-center mb-3 p-3 bg-white rounded shadow-sm">
+
+        <i class="{{$item->icon}} fs-3 text-base-color me-3"></i>
+
+        <div class="flex-grow-1">
+            <p class="mb-1 fw-bold">{{ $item->title }}</p>
+            <p class="text-muted mb-0">
+                {{ \Carbon\Carbon::parse($item->event_date)->format('F d, Y') }}
+            </p>
+        </div>
+
+        <span class="badge bg-base-color text-dark">
+            {{ $item->category}}
+        </span>
+
+    </div>
+
+@empty
+    <!-- No Events Yet -->
+    <div class="text-center py-4 bg-white rounded shadow-sm">
+        <i class="bi bi-calendar-x fs-1 text-muted mb-3 d-block"></i>
+
+        <h6 class="fw-bold text-dark-gray mb-1">
+            No Upcoming Events
+        </h6>
+
+        <p class="text-muted mb-0 small">
+            School events will be listed here once scheduled.
+        </p>
+    </div>
+@endforelse
+
+
+
+
+
             </div>
-    </section>
-    <!-- end section -->
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
 @endsection
 
 

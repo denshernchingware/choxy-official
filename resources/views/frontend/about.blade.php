@@ -97,10 +97,12 @@
                     <div class="mission-box shadow">
                         <i class="bi bi-bullseye fs-1 mb-3"></i>
                         <h3 class="h4 fw-bold">Our Mission</h3>
-                        <p>
-                            To provide education that nurtures excellence, integrity, innovation, and leadership. We are
-                            committed to developing students who are prepared to make contributions to society.
+                    @foreach ($abouts as $mission)
+                         <p>
+                            {{$mission->mission}}
                         </p>
+                    @endforeach
+
                     </div>
                 </div>
 
@@ -109,10 +111,13 @@
                     <div class="vision-box shadow bg-base-color">
                         <i class="bi bi-eye fs-1 mb-3"></i>
                         <h3 class="h4 fw-bold">Our Vision</h3>
+
+                    @foreach ($abouts as $vision)
                         <p>
-                            To develop well-rounded learners who excel academically and socially in an ever-changing
-                            world. We envision graduates who are confident, capable, and committed to lifelong learning.
+                            {{$vision->vision}}
                         </p>
+                    @endforeach
+
                     </div>
                 </div>
             </div>
@@ -155,62 +160,24 @@
             <div class="row g-0 row-cols-1 row-cols-lg-4 row-cols-sm-2 g-0 align-items-center mb-3"
                 data-anime='{ "el": "childs", "translateX": [-15, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <!-- start features box item -->
-                <div
+
+                @foreach ($values as $coreValue)
+                    <div
                     class="col services-box-style-07 text-center last-paragraph-no-margin border-end border-color-transparent-dark-very-light md-mb-50px xs-border-end-0">
                     <div class="pe-50px ps-50px pb-40px xl-ps-30px xl-pe-30px">
                         <div class="position-relative ms-auto me-auto mb-25px">
 
-                            <i class="bi bi-shield-check fs-1 text-base-color"></i>
+                            <i class="{{$coreValue->icon}} fs-1 text-base-color"></i>
                         </div>
-                        <span class="fs-18 fw-600 text-dark-gray d-block mb-5px">Integrity</span>
-                        <p class="lh-30">Upholding honesty and strong moral principles.</p>
+                        <span class="fs-18 fw-600 text-dark-gray d-block mb-5px">{{$coreValue->title}}</span>
+                        <p class="lh-30">{{$coreValue->description}}</p>
                     </div>
 
                 </div>
                 <!-- end features box item -->
-                <!-- start features box item -->
-                <div
-                    class="col services-box-style-07 text-center last-paragraph-no-margin border-end border-color-transparent-dark-very-light md-mb-50px md-border-end-0">
-                    <div class="pe-50px ps-50px pb-40px xl-ps-30px xl-pe-30px">
-                        <div class="position-relative ms-auto me-auto mb-25px">
+                @endforeach
 
-                            <i class="bi bi-trophy fs-1 text-base-color"></i>
-                        </div>
-                        <span class="fs-18 fw-600 text-dark-gray d-block mb-5px">Excellence</span>
-                        <p class="lh-30">Excellence driven in all endeavors.</p>
-                    </div>
 
-                </div>
-                <!-- end features box item -->
-                <!-- start features box item -->
-                <div
-                    class="col services-box-style-07 text-center last-paragraph-no-margin border-end border-color-transparent-dark-very-light xs-mb-50px xs-border-end-0">
-                    <div class="pe-50px ps-50px pb-40px xl-ps-30px xl-pe-30px">
-                        <div class="position-relative ms-auto me-auto mb-25px">
-
-                            <i class="bi bi-hand-thumbs-up fs-1 text-base-color"></i>
-
-                        </div>
-                        <span class="fs-18 fw-600 text-dark-gray d-block mb-5px">Respect</span>
-                        <p class="lh-30">Valuing every individual and their contributions.</p>
-                    </div>
-
-                </div>
-                <!-- end features box item -->
-                <!-- start features box item -->
-                <div class="col services-box-style-07 text-center last-paragraph-no-margin">
-                    <div class="pe-50px ps-50px pb-40px xl-ps-30px xl-pe-30px">
-                        <div class="position-relative ms-auto me-auto mb-25px">
-
-                            <i class="bi bi-people fs-1 text-base-color"></i>
-
-                        </div>
-                        <span class="fs-18 fw-600 text-dark-gray d-block mb-5px">Collaboration</span>
-                        <p class="lh-30">Working together to achieve common goals</p>
-                    </div>
-
-                </div>
-                <!-- end features box item -->
 
             </div>
         </div>

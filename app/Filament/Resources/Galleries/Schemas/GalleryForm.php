@@ -15,10 +15,9 @@ class GalleryForm
                 Select::make('category')
                     ->label('Category')
                     ->options([
-                        'borehole' => 'Borehole',
-                        'solar' => 'Solar Installation',
-                        'bushPump' => 'Bush Pump',
-                        'irrigation' => 'Irrigation',
+                        'admission' => 'Admission',
+                        'academic' => 'Academics',
+
                     ])
                     ->required(),
 
@@ -28,7 +27,7 @@ class GalleryForm
                     ->downloadable()
                     ->disk('uploads')
                     ->directory('/')
-                    ->helperText('600 x  600 commended'),
+                    ->helperText('600 x  400 recommended'),
             ]);
     }
 }

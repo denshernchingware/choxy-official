@@ -135,5 +135,5 @@
             </div>
         </div>
     </section>
- @include('partial.form')
+ @include('partial.applicationForm')
 @endsection

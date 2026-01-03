@@ -26,6 +26,13 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" />
     <link rel="stylesheet" href="{{ asset('demos/elearning/elearning.css') }}" />
+
+    <style>
+        .news-text {
+    transition: all 0.3s ease;
+}
+    </style>
+
 </head>
 
 
@@ -114,8 +121,8 @@
             <h2 class="display-5 fw-bold mb-3">Ready to Join Choxy Dee Academy?</h2>
             <p class="lead mb-5">Start your journey towards excellence. Applications for Form 1 are now open.</p>
             <div>
-                <a href="#" class="btn btn-warning rounded-pill px-5 py-3 fw-bold me-3">Apply Now</a>
-                <a href="#" class="btn btn-outline-light rounded-pill px-5 py-3 fw-bold">Schedule a Visit</a>
+                <a href="{{route('apply')}}#application" class="btn btn-warning rounded-pill px-5 py-3 fw-bold me-3 popup-youtube">Apply Now</a>
+                <a href="{{route('contact')}}#contactSection" class="btn btn-outline-light rounded-pill px-5 py-3 fw-bold popup-youtube">Schedule a Visit</a>
             </div>
         </div>
     </section>
@@ -126,13 +133,16 @@
             <div class="row g-5">
                 <!-- Logo & Description -->
                 <div class="col-lg-4">
-                    <div class="d-flex align-items-center mb-4">
-                        <img src="images/logo.png" alt="Choxy Dee Academy Logo" class="logo-img me-3">
+                    <a href="#">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="images/logo.png" alt="Choxy Dee Academy Logo" class="logo-img me-3">
                         <div>
                             <h5 class="fw-bold text-white mb-0">Choxy Dee Academy</h5>
                             <small class="text-white">Striving for Excellence</small>
                         </div>
                     </div>
+                    </a>
+
                     <p class="small">
                         A private secondary school dedicated to nurturing excellence through quality education,
                         discipline, and innovation.
@@ -155,11 +165,11 @@
                 <div class="col-lg-3 col-md-6">
                     <h6 class="text-white fw-bold mb-4">Contact Us</h6>
                     <p class="mb-2">
-                        <i class="bi bi-telephone me-2 text-warning"></i>0775 746 617<br>
-                        <i class="bi bi-telephone me-2 text-warning"></i> 0778 550 367 <br>
-                        <i class="bi bi-telephone me-2 text-warning"></i>0719 746 617
+                        <i class="bi bi-telephone me-2 text-warning"></i><a href="tel:+263775746617">+263 775 746 617</a><br>
+                        <i class="bi bi-telephone me-2 text-warning"></i><a href="tel:+263778550367">+263 778 550 367</a><br>
+                        <i class="bi bi-telephone me-2 text-warning"></i><a href="tel:+263719746617">+263 719 746 617</a>
                     </p>
-                    <p class="mb-2"><i class="bi bi-envelope me-2 text-warning"></i> info@choxydeeacademy.co.zw</p>
+                    <p class="mb-2"><i class="bi bi-envelope me-2 text-warning"></i><a href="mailto:info@choxydeeacademy.co.zw">info@choxydeeacademy.co.zw</a></p>
                     <p class="mb-2"><i class="bi bi-geo-alt me-2 text-warning"></i> 11331 Glen Norah C, Masimbi</p>
                     <p class="mb-2"><i class="bi bi-geo-alt me-2 text-warning"></i> 5223 Southly Park, Magetsi</p>
                 </div>
@@ -172,18 +182,18 @@
                     </p>
 
                     <div class="d-flex gap-3">
-                        <a href="#" class="text-white fs-4" aria-label="Facebook">
+                        <p class="text-white fs-4" aria-label="Facebook">
                             <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="#" class="text-white fs-4" aria-label="X (Twitter)">
+                        </p>
+                        <p  class="text-white fs-4" aria-label="X (Twitter)">
                             <i class="bi bi-twitter-x"></i>
-                        </a>
-                        <a href="#" class="text-white fs-4" aria-label="Instagram">
+                        </p>
+                        <p class="text-white fs-4" aria-label="Instagram">
                             <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="#" class="text-white fs-4" aria-label="YouTube">
+                        </p>
+                        <p class="text-white fs-4" aria-label="YouTube">
                             <i class="bi bi-youtube"></i>
-                        </a>
+                        </p>
                     </div>
                 </div>
 
@@ -195,7 +205,7 @@
                 &copy; 2026 Choxy Dee Academy. All rights reserved.
             </div>
             <div class="text-center small">
-                Crafted by <a href="https://www.dmtechnologies.co.zw/" class="text-white text-decoration-line-bottom"
+                Crafted by <a href="https://denshernchingware.github.io/dmtechnologies.co.zw/" class="text-white text-decoration-line-bottom"
                     target="_blank">DMTechnologies</a>
             </div>
         </div>
@@ -214,6 +224,23 @@
     <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/vendors.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+    <script>
+function toggleNews(button) {
+    const card = button.closest('.card');
+    const shortText = card.querySelector('.short-text');
+    const fullText = card.querySelector('.full-text');
+
+    if (fullText.classList.contains('d-none')) {
+        shortText.classList.add('d-none');
+        fullText.classList.remove('d-none');
+        button.textContent = 'View less';
+    } else {
+        shortText.classList.remove('d-none');
+        fullText.classList.add('d-none');
+        button.textContent = 'View more';
+    }
+}
+</script>
 
 </body>
 

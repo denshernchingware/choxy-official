@@ -19,14 +19,6 @@ class AboutsTable
     {
         return $table
             ->columns([
-                // TextColumn::make('created_at')
-                //     ->dateTime()
-                //     ->sortable()
-                //     ->toggleable(isToggledHiddenByDefault: true),
-                // TextColumn::make('updated_at')
-                //     ->dateTime()
-                //     ->sortable()
-                //     ->toggleable(isToggledHiddenByDefault: true),
                  ImageColumn::make('images')
                 ->label('Photo')
                 ->disk('uploads')

@@ -17,9 +17,8 @@ class EventForm
                 Select::make('icon')
             ->label('Icon (Heroicon name)')
             ->options([
-                'event' => 'Event',
-                'news' => 'News',
-                'announcement' => 'Announcement',
+                'bi bi-calendar-event' => 'Event',
+                
                 ])
             ->placeholder('heroicon-o-calendar')
             ->helperText('Example: heroicon-o-calendar')

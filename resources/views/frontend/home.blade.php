@@ -31,14 +31,14 @@
                             education, discipline, and innovation.</span>
                     </div>
                     <div class="overflow-hidden">
-                        <a href="demo-elearning-contact.html"
+                        <a href="{{ route('contact') }}"
                             class="btn btn-extra-large btn-base-color btn-rounded btn-switch-text fw-600 d-inline-block me-25px sm-me-10px align-middle left-icon">
                             <span>
                                 <span><i class="bi bi-telephone-fill"></i></span>
                                 <span class="btn-double-text ls-minus-05px" data-text="Contact Us">Contact Us</span>
                             </span>
                         </a>
-                        <a href=""
+                        <a href="{{ route('apply') }}#application"
                             class="btn btn-link btn-hover-animation-switch btn-extra-large text-white popup-youtube btn-icon-left">
                             <span>
                                 <span class="btn-text">Apply Now</span>
@@ -135,7 +135,7 @@
                         </div>
                     </div>
                     <h2 class="alt-font text-dark-gray fw-600 ls-minus-3px mx-auto">Why Choose Choxy Dee Academy?</h2>
-                    <a href="demo-elearning-about.html"
+                    <a href="{{route('about')}}"
                         class="btn btn-large btn-dark-gray btn-box-shadow btn-rounded btn-switch-text">
                         <span>
                             <span class="btn-double-text" data-text="Learn more">Learn more</span>
@@ -145,8 +145,8 @@
                     <div
                         class="d-flex align-items-center fw-500 text-dark-gray w-100 position-absolute md-position-relative bottom-0 left-minus-5px md-mt-15px">
                         <img src="images/why-us.png" alt=""><span
-                            class="d-inline-block position-relative lh-24">Subjects taught by <a href=""
-                                class="fw-600  text-dark-gray ">experts.</a></span></div>
+                            class="d-inline-block position-relative lh-24">Subjects taught by <span
+                                class="fw-600  text-dark-gray ">experts.</span></span></div>
                 </div>
                 <div class="col-xl-6 col-lg-7 col-md-10 offset-xl-1 position-relative mt-minus-1">
                     <div class="row row-cols-auto row-cols-sm-2"
@@ -208,16 +208,21 @@
             <div class="row align-items-center g-5">
 
                 <!-- Image Column -->
-                <div class="col-lg-6 order-lg-1 order-1">
-                    <div class="img-container position-relative">
-                        <img src="images/abt-us.jpg" alt="Happy students at Choxy Dee Academy"
-                            class="img-fluid w-100 rounded">
+                  @foreach ($abouts as $about)
+    <div class="col-lg-6 order-lg-1 order-1">
+        <div class="img-container position-relative">
+            <img
+                src="{{ asset('uploads/' . $about->images) }}"
+                alt="Happy students at Choxy Dee Academy"
+                class="img-fluid w-100 rounded"
+            >
+        </div>
+    </div>
+@endforeach
 
-                    </div>
-                </div>
 
                 <!-- Text Column -->
-                <div class="col-lg-6 order-lg-2 order-2">
+                <div class="col-lg-6 order-lg-2 order-2 ">
                     <p class="text-uppercase fw-bold  small tracking-wider">
                         About Us
                     </p>
@@ -247,7 +252,7 @@
                         </li>
                     </ul>
 
-                    <a href="demo-elearning-about.html"
+                    <a href="{{route('about')}}"
                         class="btn btn-large btn-dark-gray btn-box-shadow btn-rounded btn-switch-text">
                         <span>
                             <span class="btn-double-text" data-text="About us">Find more about us</span>
@@ -263,116 +268,128 @@
     <!-- start section -->
    @include('partial.subjectsOffered')
     <!-- end section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <!-- Latest News -->
-                <div class="col-lg-8">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h3 class="alt-font text-dark-gray fw-600 ls-minus-3px mx-auto">Latest News</h3>
-                        <a href="#" class="text-base-color fw-bold text-decoration-none">View All →</a>
-                    </div>
+   <!-- =======================
+     Latest News Section
+======================= -->
+<section class="py-5 bg-light">
+    <div class="container">
 
-                    <div class="row g-4">
-                        <!-- News Item 1 -->
-                        <div class="col-md-4">
-                            <div class="card border-0 shadow-sm news-card">
-                                <img src="images/registration.png" class="card-img-top"
-                                    alt="Students learning in classroom">
-                                <div class="card-body">
-                                    <p class="text-muted small mb-2">January 15, 2025</p>
-                                    <h5 class="alt-font-one text-dark-gray fw-600  mx-auto mb-0">Term 1 Registration
-                                        Now Open</h5>
-                                    <p class="card-text text-muted small ">
-                                        Applications for Form 1 are now being accepted for the upcoming academic...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="alt-font text-dark-gray fw-600 ls-minus-3px">
+                Latest News
+            </h3>
+            <a href="{{route('newsEvents')}}" class="text-base-color fw-bold text-decoration-none">
+                View All →
+            </a>
+        </div>
+
+        <div class="row g-4">
+                  <!-- News Items -->
+@forelse ($news as $new)
+<div class="col-md-4">
+    <div class="card border-0 shadow-sm h-100 news-card">
+        <img src="{{ asset('uploads/' . $new->image) }}" class="card-img-top" alt="{{ $new->title }}">
+
+        <div class="card-body d-flex flex-column">
+            <p class="text-muted small mb-2">
+                {{ \Carbon\Carbon::parse($new->date)->format('F d, Y') }}
+            </p>
+
+            <h5 class="fw-600 text-dark-gray mb-2">
+                {{ $new->title }}
+            </h5>
+
+            <p class="text-muted small news-text">
+                <span class="short-text">
+                    {{ Str::limit($new->information, 120) }}
+                </span>
+                <span class="full-text d-none">
+                    {{ $new->information }}
+                </span>
+            </p>
+
+            @if (strlen($new->information) > 120)
+                <button
+                    type="button"
+                    class="btn btn-link p-0 text-base-color fw-bold mt-auto"
+                    onclick="toggleNews(this)">
+                    View more
+                </button>
+            @endif
+        </div>
+    </div>
+</div>
+
+@empty
+<div class="col-12 text-center py-5">
+    <i class="bi bi-newspaper fs-1 text-muted d-block mb-2"></i>
+    <h5>No News Yet</h5>
+    <p class="text-muted small">Please check back later for updates.</p>
+</div>
+@endforelse
+    </div>
+</section>
+<!-- =======================
+     Upcoming Events Section
+======================= -->
+<section class="py-5 bg-white">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="alt-font text-dark-gray fw-600 ls-minus-3px">
+                Latest Upcoming Events
+            </h3>
+            <a href="{{route('newsEvents')}}" class="btn btn-base-color rounded-pill px-4 fw-bold text-black">
+                View All
+            </a>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+              @forelse ($events as $item)
+    <div class="event-item d-flex align-items-center mb-3 p-3 bg-white rounded shadow-sm">
+
+        <i class="{{$item->icon}} fs-3 text-base-color me-3"></i>
+
+        <div class="flex-grow-1">
+            <p class="mb-1 fw-bold">{{ $item->title }}</p>
+            <p class="text-muted mb-0">
+                {{ \Carbon\Carbon::parse($item->event_date)->format('F d, Y') }}
+            </p>
+        </div>
+
+        <span class="badge bg-base-color text-dark">
+            {{ $item->category }}
+        </span>
+
+    </div>
+
+@empty
+    <!-- No Events Yet -->
+    <div class="text-center py-4 bg-white rounded shadow-sm">
+        <i class="bi bi-calendar-x fs-1 text-muted mb-3 d-block"></i>
+
+        <h6 class="fw-bold text-dark-gray mb-1">
+            No Upcoming Events
+        </h6>
+
+        <p class="text-muted mb-0 small">
+            School events will be listed here once scheduled.
+        </p>
+    </div>
+@endforelse
 
 
-                        <!-- News Item 2 -->
-                        <div class="col-md-4">
-                            <div class="card border-0 shadow-sm news-card">
-                                <img src="images/sports.jpg" class="card-img-top" alt="Inter-School Sports Day">
-                                <div class="card-body">
-                                    <p class="text-muted small mb-2">December 10, 2024</p>
-                                    <h5 class="alt-font-one text-dark-gray fw-600  mx-auto mb-0">Inter-School Sports
-                                        Day Success</h5>
-                                    <p class="card-text text-muted small">
-                                        Our students excelled at the district sports competition, winning multiple...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- News Item 3 -->
-                        <div class="col-md-4">
-                            <div class="card border-0 shadow-sm news-card">
-                                <img src="images/education.png" class="card-img-top"
-                                    alt="Academic Excellence Awards">
-                                <div class="card-body">
-                                    <p class="text-muted small mb-2">November 28, 2024</p>
-                                    <h5 class="alt-font-one text-dark-gray fw-600  mx-auto mb-0">Academic Excellence
-                                        Awards</h5>
-                                    <p class="card-text text-muted small">
-                                        Celebrating our top performers from the 2024 examination results.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Upcoming Events -->
-                <div class="col-lg-4 sm-mt-4">
-                    <h3 class="alt-font text-dark-gray fw-600 ls-minus-3px mx-auto">Upcoming Events</h3>
 
-                    <div class="event-item d-flex align-items-center">
-                        <i class="bi bi-calendar-event fs-3 text-base-color me-3"></i>
-                        <div class="flex-grow-1">
-                            <p class="mb-1"><strong>Open Day</strong></p>
-                            <p class="text-dark-gray mb-1">Jan 25, 2025</p>
-                        </div>
-                        <span class="badge bg-base-color text-dark event-badge">Admissions</span>
-                    </div>
-
-                    <div class="event-item d-flex align-items-center">
-                        <i class="bi bi-calendar-event fs-3 text-base-color me-3"></i>
-                        <div class="flex-grow-1">
-                            <p class="mb-1"><strong>Term 1 Begins</strong></p>
-                            <p class="text-dark-gray mb-1">Feb 3, 2025</p>
-                        </div>
-                        <span class="badge bg-light text-dark event-badge border">Academic</span>
-                    </div>
-
-                    <div class="event-item d-flex align-items-center">
-                        <i class="bi bi-calendar-event fs-3 text-base-color me-3"></i>
-                        <div class="flex-grow-1">
-                            <p class="mb-1"><strong>Parents Meeting</strong></p>
-                            <p class="text-dark-gray mb-1">Feb 15, 2025</p>
-                        </div>
-                        <span class="badge bg-light text-dark event-badge border">Community</span>
-                    </div>
-
-                    <div class="event-item d-flex align-items-center">
-                        <i class="bi bi-calendar-event fs-3 text-base-color me-3"></i>
-                        <div class="flex-grow-1">
-                            <p class="mb-1"><strong>Sports Day</strong></p>
-                            <p class="text-dark-gray mb-1">Mar 8, 2025</p>
-                        </div>
-                        <span class="badge bg-light text-dark event-badge border">Sports</span>
-                    </div>
-
-                    <div>
-                        <a href="#"
-                            class="btn btn-base-color rounded-pill px-5 py-3 fw-bold me-3 text-black">View All</a>
-
-                    </div>
-                </div>
             </div>
-    </section>
-    @include('partial.contactForm')
+        </div>
+
+    </div>
+</section>
+
+    {{-- @include('partial.contactForm') --}}
 
 @endsection
 

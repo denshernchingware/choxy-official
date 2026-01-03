@@ -11,7 +11,7 @@
         <!-- Heading -->
         <div class="row justify-content-center mb-4">
             <div class="col-12 text-center">
-                <h2 class="fw-semibold text-dark">
+                <h2 class="fw-semibold text-dark-gray">
                     How we can help you?
                 </h2>
             </div>

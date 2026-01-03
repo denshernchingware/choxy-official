@@ -20,13 +20,13 @@ class ValueForm
                     ->required()
                     ->columnSpanFull(),
                 Select::make('icon')
-            ->label('Icon')
-            ->required()
-            ->options([
-                'bi-shield-check' => 'Integrity',
-                'bi-award'        => 'Excellence',
-                'bi-heart'        => 'Respect',
-                'bi-people'       => 'Collaboration',
+                    ->label('Icon')
+                    ->required()
+                    ->options([
+                        'bi-shield-check' => 'Integrity',
+                        'bi-award'        => 'Excellence',
+                        'bi-heart'        => 'Respect',
+                        'bi-people'       => 'Collaboration',
             ])
             ->searchable(),
 

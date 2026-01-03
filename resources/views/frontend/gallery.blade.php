@@ -2,7 +2,7 @@
 @section('content')
     <!-- start page title -->
     <section class="ipad-top-space-margin bg-dark-gray cover-background page-title-big-typography"
-        style="background-image: url('{{asset("images/gallery.png")}}')">
+        style="background-image: url('{{ asset('images/gallery.png') }}')">
         <div class="background-position-center-top h-100 w-100 position-absolute left-0px top-0"
             style="background-image: url('images/vertical-line-bg-small.svg')"></div>
         <div id="particles-style-01" class="h-100 position-absolute left-0px top-0 w-100" data-particle="true"
@@ -22,109 +22,62 @@
     <!-- end page title -->
 
 
-<section class="ps-2 pe-2">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col sm-p-0">
-                        <div class="row g-3 " data-justified-options='{ "rowHeight": 500, "maxRowHeight": false, "captions": false, "margins": 15, "waitThumbnailsLoad": true }' data-anime='{ "el": "childs", "translateY": [0, 0],"opacity": [0,1], "duration": 500, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                            <!-- start gallery item -->
-                           <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="gallery-box transition-inner-all">
-                                <a href="images/atheletics.jpeg" data-group="lightbox-group-gallery-item-6">
-                                    <div class="position-relative bg-dark-gray">
-                                        <img src="images/atheletics.jpeg" alt="" />
-                                        <div class="d-flex align-items-center justify-content-center gallery-hover">
-                                            <i class="icon feather icon-feather-search icon-very-medium text-white absolute-middle-center"></i>
-                                            <span class="gallery-title text-white fs-18"></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            </div>
-                            <!-- end gallery item -->
-                            <!-- start gallery item -->
-                             <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="gallery-box transition-inner-all">
-                                <a href="images/handball.jpeg" data-group="lightbox-group-gallery-item-6">
-                                    <div class="position-relative bg-dark-gray">
-                                        <img src="images/handball.jpeg" alt="" />
-                                        <div class="d-flex align-items-center justify-content-center gallery-hover">
-                                            <i class="icon feather icon-feather-search icon-very-medium text-white absolute-middle-center"></i>
-                                            <span class="gallery-title text-white fs-18"></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            </div>
-                            <!-- end gallery item -->
-                            <!-- start gallery item -->
-                             <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="gallery-box transition-inner-all">
-                                <a href="images/volley-ball.jpeg" data-group="lightbox-group-gallery-item-6">
-                                    <div class="position-relative bg-dark-gray">
-                                        <img src="images/volley-ball.jpeg" alt="" />
-                                        <div class="d-flex align-items-center justify-content-center gallery-hover">
-                                            <i class="icon feather icon-feather-search icon-very-medium text-white absolute-middle-center"></i>
-                                            <span class="gallery-title text-white fs-18"></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            </div>
-                            <!-- end gallery item -->
-                            <!-- start gallery item -->
+    <section class="ps-2 pe-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col sm-p-0">
+                    <div class="row g-3 "
+                        data-justified-options='{ "rowHeight": 500, "maxRowHeight": false, "captions": false, "margins": 15, "waitThumbnailsLoad": true }'
+                        data-anime='{ "el": "childs", "translateY": [0, 0],"opacity": [0,1], "duration": 500, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                        <!-- start gallery item -->
+                        @forelse ($photos as $photo)
                             <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="gallery-box transition-inner-all">
-                                <a href="images/atheletics.jpeg" data-group="lightbox-group-gallery-item-6">
-                                    <div class="position-relative bg-dark-gray">
-                                        <img src="images/atheletics.jpeg" alt="" />
-                                        <div class="d-flex align-items-center justify-content-center gallery-hover">
-                                            <i class="icon feather icon-feather-search icon-very-medium text-white absolute-middle-center"></i>
-                                            <span class="gallery-title text-white fs-18"></span>
+                                <div class="gallery-box transition-inner-all">
+
+                                    <a href="{{ asset('uploads/' . $photo->image) }}" data-group="lightbox-group-gallery">
+
+                                        <div class="position-relative bg-dark-gray">
+                                            <img src="{{ asset('uploads/' . $photo->image) }}"
+                                                alt="{{ $photo->title ?? 'Gallery image' }}" class="img-fluid" />
+
+                                            <div class="d-flex align-items-center justify-content-center gallery-hover">
+                                                <i
+                                                    class="icon feather icon-feather-search icon-very-medium text-white absolute-middle-center"></i>
+
+                                               
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
+
+                                    </a>
+
+                                </div>
                             </div>
+
+                        @empty
+                            <!-- No Photos Yet -->
+                            <div class="col-12">
+                                <div class="text-center py-5 bg-light rounded shadow-sm">
+
+                                    <i class="bi bi-images fs-1 text-muted mb-3 d-block"></i>
+
+                                    <h5 class="fw-bold text-dark-gray mb-2">
+                                        No Photos Yet
+                                    </h5>
+
+                                    <p class="text-muted mb-0">
+                                        School activities and memorable moments will appear here once uploaded.
+                                    </p>
+
+                                </div>
                             </div>
-                            <!-- end gallery item -->
-                            <!-- start gallery item -->
-                            <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="gallery-box transition-inner-all">
-                                <a href="images/atheletics.jpeg" data-group="lightbox-group-gallery-item-6">
-                                    <div class="position-relative bg-dark-gray">
-                                        <img src="images/atheletics.jpeg" alt="" />
-                                        <div class="d-flex align-items-center justify-content-center gallery-hover">
-                                            <i class="icon feather icon-feather-search icon-very-medium text-white absolute-middle-center"></i>
-                                            <span class="gallery-title text-white fs-18"></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            </div>
-                            <!-- end gallery item -->
-                            <!-- start gallery item -->
-                           <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="gallery-box transition-inner-all">
-                                <a href="images/atheletics.jpeg" data-group="lightbox-group-gallery-item-6">
-                                    <div class="position-relative bg-dark-gray">
-                                        <img src="images/atheletics.jpeg" alt="" />
-                                        <div class="d-flex align-items-center justify-content-center gallery-hover">
-                                            <i class="icon feather icon-feather-search icon-very-medium text-white absolute-middle-center"></i>
-                                            <span class="gallery-title text-white fs-18"></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            </div>
-                            <!-- end gallery item -->
-                        </div>
+                        @endforelse
+
+
+
+
                     </div>
                 </div>
             </div>
-</section>
+        </div>
+    </section>
 @endsection
-
-
-
-
-

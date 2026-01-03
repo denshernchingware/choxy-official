@@ -66,72 +66,56 @@
 
     <section class="position-relative pt-0 half-section overflow-hidden">
         <img src="images/demo-data-analysis-bg-06.png" class="position-absolute top-0px left-0px"
-            data-bottom-top="transform: translateY(150px)" data-top-bottom="transform: translateY(-150px)"
-            alt="" />
+            data-bottom-top="transform: translateY(150px)" data-top-bottom="transform: translateY(-150px)" alt="" />
         <img src="images/demo-data-analysis-bg-07.png" class="position-absolute top-10 right-0px"
-            data-bottom-top="transform: translateY(150px)" data-top-bottom="transform: translateY(-150px)"
-            alt="" />
+            data-bottom-top="transform: translateY(150px)" data-top-bottom="transform: translateY(-150px)" alt="" />
         <div class="container position-relative z-index-1">
-            <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2 justify-content-center mb-3"
+            <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center mb-3"
                 data-anime='{ "el": "childs", "translateX": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <!-- start features box item -->
-                <div class="col icon-with-text-style-04 transition-inner-all mb-30px">
-                    <div
-                        class="feature-box bg-ghost-white text-start justify-content-start h-100 border-radius-6px p-16 lg-p-10">
-                        <div class="feature-box-icon mb-25px">
-                            <img src="images/atheletics.jpeg" alt="" />
-                        </div>
-                        <div class="feature-box-content last-paragraph-no-margin">
-                            <span class="d-inline-block text-dark-gray fw-600 fs-20 alt-font mb-5px">Athletics</span>
-                            <p>Track and field events for all students.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- end features box item -->
-                <!-- start features box item -->
-                <div class="col icon-with-text-style-04 transition-inner-all mb-30px">
-                    <div
-                        class="feature-box bg-cosmic-latte-white text-start justify-content-start h-100 border-radius-6px p-16 lg-p-10">
-                        <div class="feature-box-icon mb-25px">
-                            <img src="images/volley-ball.jpeg" alt="" />
-                        </div>
-                        <div class="feature-box-content last-paragraph-no-margin">
-                            <span class="d-inline-block text-dark-gray fw-600 fs-20 alt-font mb-5px">Volleyball</span>
-                            <p>Team sport promoting coordination and teamwork.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- end features box item -->
+                @forelse ($sports as $sport)
+                    <div class="col icon-with-text-style-04 transition-inner-all mb-30px">
+                        <div
+                            class="feature-box bg-ghost-white text-start justify-content-start h-100 border-radius-6px p-16 lg-p-10">
 
-                <!-- start features box item -->
-                <div class="col icon-with-text-style-04 transition-inner-all mb-30px">
-                    <div
-                        class="feature-box bg-linen-white text-start justify-content-start h-100 border-radius-6px p-16 lg-p-10">
-                        <div class="feature-box-icon mb-25px">
-                            <img src="images/football.jpeg" alt="" />
-                        </div>
-                        <div class="feature-box-content last-paragraph-no-margin">
-                            <span class="d-inline-block text-dark-gray fw-600 fs-20 alt-font mb-5px">Soccer</span>
-                            <p>Dedicated soccer teams at various levels.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- end features box item -->
-                <!-- start features box item -->
-                <div class="col icon-with-text-style-04 transition-inner-all mb-30px">
-                    <div
-                        class="feature-box bg-lavender-violet text-start justify-content-start h-100 border-radius-6px p-16 lg-p-10">
-                        <div class="feature-box-icon mb-25px">
-                            <img src="images/handball.jpeg" alt="" />
-                        </div>
-                        <div class="feature-box-content last-paragraph-no-margin">
-                            <span class="d-inline-block text-dark-gray fw-600 fs-20 alt-font mb-5px">Handball</span>
-                            <p>Fast-paced team sport for all.</p>
+                            <div class="feature-box-icon mb-25px">
+                                <img src="{{ asset('uploads/' . $sport->image) }}" alt="{{ $sport->name }}"
+                                    class="img-fluid" />
+                            </div>
+
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span class="d-inline-block text-dark-gray fw-600 fs-20 alt-font mb-5px">
+                                    {{ $sport->title }}
+                                </span>
+                                <p>{{ $sport->description }}</p>
+                            </div>
+
                         </div>
                     </div>
-                </div>
-                <!-- end features box item -->
-                <!-- start features box item -->
+                    <!-- end features box item -->
+
+                @empty
+                    <!-- No Sports Yet -->
+                    <div class="col-12">
+                        <div class="text-center py-5 bg-light border-radius-6px shadow-sm">
+
+                            <i class="bi bi-trophy fs-1 text-muted mb-3 d-block"></i>
+
+                            <h5 class="fw-600 text-dark-gray mb-2">
+                                No Sports Activities Yet
+                            </h5>
+
+                            <p class="text-muted mb-0">
+                                Sports programs and activities will be displayed here once available.
+                            </p>
+
+                        </div>
+                    </div>
+                @endforelse
+
+
+
+
             </div>
         </div>
         <div class="container-fluid">
@@ -141,8 +125,7 @@
                     <div class="swiper-wrapper swiper-width-auto pb-15px marquee-slide">
                         <!-- start client item -->
                         <div class="swiper-slide">
-                            <div
-                                class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
+                            <div class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
                                 <span
                                     class="w-20px h-20px border border-radius-100 border-color-extra-medium-gray d-inline-block align-middle ms-50px me-50px sm-ms-30px sm-me-30px"></span>Choxy
                                 Dee Academy
@@ -151,8 +134,7 @@
                         <!-- end client item -->
                         <!-- start client item -->
                         <div class="swiper-slide">
-                            <div
-                                class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
+                            <div class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
                                 <span
                                     class="w-20px h-20px border border-radius-100 border-color-extra-medium-gray d-inline-block align-middle ms-50px me-50px sm-ms-30px sm-me-30px"></span>Choxy
                                 Dee Academy
@@ -161,8 +143,7 @@
                         <!-- end client item -->
                         <!-- start client item -->
                         <div class="swiper-slide">
-                            <div
-                                class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
+                            <div class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
                                 <span
                                     class="w-20px h-20px border border-radius-100 border-color-extra-medium-gray d-inline-block align-middle ms-50px me-50px sm-ms-30px sm-me-30px"></span>Choxy
                                 Dee Academy
@@ -171,8 +152,7 @@
                         <!-- end client item -->
                         <!-- start client item -->
                         <div class="swiper-slide">
-                            <div
-                                class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
+                            <div class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
                                 <span
                                     class="w-20px h-20px border border-radius-100 border-color-extra-medium-gray d-inline-block align-middle ms-50px me-50px sm-ms-30px sm-me-30px"></span>Choxy
                                 Dee Academy
@@ -181,8 +161,7 @@
                         <!-- end client item -->
                         <!-- start client item -->
                         <div class="swiper-slide">
-                            <div
-                                class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
+                            <div class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
                                 <span
                                     class="w-20px h-20px border border-radius-100 border-color-extra-medium-gray d-inline-block align-middle ms-50px me-50px sm-ms-30px sm-me-30px"></span>Choxy
                                 Dee Academy
@@ -191,8 +170,7 @@
                         <!-- end client item -->
                         <!-- start client item -->
                         <div class="swiper-slide">
-                            <div
-                                class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
+                            <div class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
                                 <span
                                     class="w-20px h-20px border border-radius-100 border-color-extra-medium-gray d-inline-block align-middle ms-50px me-50px sm-ms-30px sm-me-30px"></span>Choxy
                                 Dee Academy
@@ -201,8 +179,7 @@
                         <!-- end client item -->
                         <!-- start client item -->
                         <div class="swiper-slide">
-                            <div
-                                class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
+                            <div class="fs-120 lh-120 alt-font text-outline text-outline-color-extra-medium-gray fw-700">
                                 <span
                                     class="w-20px h-20px border border-radius-100 border-color-extra-medium-gray d-inline-block align-middle ms-50px me-50px sm-ms-30px sm-me-30px"></span>Choxy
                                 Dee Academy
@@ -310,9 +287,3 @@
         </div>
     </section>
 @endsection
-
-
-
-
-
-
