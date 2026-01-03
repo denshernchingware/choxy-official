@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use App\Models\About;
 use App\Models\Application;
 use App\Models\Email;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
-
+use Illuminate\Support\Facades\Mail;
 
 class TemplateController extends Controller
 {
@@ -45,12 +46,15 @@ class TemplateController extends Controller
      $validated = $request->validate([
         'name'                    => 'required|string|min:3',
         'subject'                 => 'required|string|min:3',
-        'phone'                   => 'required|string|min:7',
+        'phone'                   => 'required|string|regex:/^[0-9+\s\-]{7,20}$/',
         'email'                   => 'required|email',
         'comment'                 => 'required|string|min:5',
      ]);
 
-  // Save to database
+       // Example: send email
+       Mail::to('info@choxydeeacademy.co.zw')->send(new ContactMail($validated));
+
+     // Save to database
         Email::create($validated);
 
         // return

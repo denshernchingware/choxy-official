@@ -1,12 +1,33 @@
 <x-mail::message>
-# Introduction
+# 📩 New Contact Message
 
-The body of your message.
+Hello Admin,
+You have received a new inquiry from your website contact form.
 
-<x-mail::button :url="''">
-Button Text
+---
+
+### 👤 Sender Details
+
+- **Name:** {{ $data['name'] }}
+---
+- **Email:** {{ $data['email'] }}
+---
+- **Phone:** {{ $data['phone'] }}
+---
+- **Subject:** {{ $data['subject'] }}
+
+---
+
+### 💬 Message
+{{ $data['comment'] }}
+
+---
+
+<x-mail::button :url="'mailto:' . $data['email']">
+Reply to {{ $data['name'] }}
 </x-mail::button>
 
 Thanks,<br>
 {{ config('app.name') }}
 </x-mail::message>
+

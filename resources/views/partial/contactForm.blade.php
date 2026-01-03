@@ -63,7 +63,7 @@
                                     <i class="bi bi-telephone"></i>
                                 </span>
                                 <input type="tel" name="phone" class="form-control"
-                                       placeholder="Enter your phone number" required>
+                                       placeholder="e.g +263784384378" required>
                             </div>
                         </div>
 
@@ -77,7 +77,7 @@
                                     <i class="bi bi-journal-text"></i>
                                 </span>
                                 <input type="text" name="subject" class="form-control"
-                                       placeholder="How can we help you?">
+                                       placeholder="e.g price inquiry" required>
                             </div>
                         </div>
 
@@ -91,7 +91,7 @@
                                     <i class="bi bi-chat-dots"></i>
                                 </span>
                                 <textarea name="comment" rows="4" class="form-control"
-                                          placeholder="Describe your message"></textarea>
+                                          placeholder="Describe your message" required></textarea>
                             </div>
                         </div>
 

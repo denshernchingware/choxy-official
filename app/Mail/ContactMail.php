@@ -31,7 +31,6 @@ class ContactMail extends Mailable
          return new Envelope(
             subject: 'New Inquiry from ' . $this->data['name'],
         from: new Address('info@choxydeeacademy.co.zw', 'Choxy Dee Academy'),
-
         );
     }
 
