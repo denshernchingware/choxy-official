@@ -1,6 +1,7 @@
 @extends('frontend.master')
 @section('content')
-   <section class="ipad-top-space-margin bg-dark-gray cover-background page-title-big-typography"
+   <!-- start page title -->
+    <section class="ipad-top-space-margin bg-dark-gray cover-background page-title-big-typography"
         style="background-image: url(images/adm-main.png)">
         <div class="background-position-center-top h-100 w-100 position-absolute left-0px top-0"
             style="background-image: url('images/vertical-line-bg-small.svg')"></div>
@@ -134,8 +135,5 @@
             </div>
         </div>
     </section>
+ @include('partial.form')
 @endsection
-
-
-
-

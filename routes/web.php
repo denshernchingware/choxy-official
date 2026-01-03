@@ -2,36 +2,28 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemplateController;
-use Illuminate\Http\Request;
 
-//admission page
-Route::get('/application', function () {
-    return view('frontend.application');})->name('apply');
-
-//contact page
-Route::get('/contact', function () {
-    return view('frontend.contact');})->name('contact');
-
-//home page
-Route::get('/', function () {
-    return view('frontend.home');})->name('home');
-
-//news and events page
-Route::get('/news-events', function () {
-    return view('frontend.newsEvents');})->name('newsEvents');
-
-//schoollife page
-Route::get('/school-Life', function () {
-    return view('frontend.schoolLife');})->name('schoolLife');
-
-//gallery page
-Route::get('/gallery', function () {
-    return view('frontend.gallery');})->name('gallery');
-
- //about page
-Route::get('/about', function () {
-    return view('frontend.about');})->name('about');
+/*
+    |-------------------------------------------------------------------------- | Frontend Pages
+    |-------------------------------------------------------------------------- */
+    Route::get('/',[TemplateController::class, 'home' ])->name('home');
+    Route::get('/about', [TemplateController::class, 'about'])->name('about');
+    Route::get('/contact', [TemplateController::class, 'contact'])->name('contact');
+    Route::get('/gallery', [TemplateController::class, 'gallery'])->name('gallery');
+    Route::get('/admission', [TemplateController::class, 'admission'])
+     ->name('apply');
+    Route::get('/news-events', [TemplateController::class, 'newsEvents'])->name('newsEvents');
+    Route::get('/school-life', [TemplateController::class, 'schoolLife'])->name('schoolLife');
 
 
-Route::post('/apply', [TemplateController::class, 'application'])->name('application');
-Route::get('/applications/{application}/download',[TemplateController::class, 'download'])->name('applications.download');
+    /*
+    |--------------------------------------------------------------------------
+    | Application Logic
+    |--------------------------------------------------------------------------
+    */
+    Route::post('/apply', [TemplateController::class, 'application'])
+    ->name('application.submit');
+    Route::get('/applications/{application}/download',
+    [TemplateController::class, 'download']
+    )->name('applications.download');
+    Route::post('/contact-submit', [TemplateController::class, 'contactSubmit'])->name('contact.submit');

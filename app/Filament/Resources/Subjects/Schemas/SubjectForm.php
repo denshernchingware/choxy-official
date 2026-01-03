@@ -31,7 +31,7 @@ class SubjectForm
                 'bi-shop'            => 'Commerce',
                 'bi-journal-text'    => 'Accounts',
                 'bi-briefcase'       => 'Business Studies',
-                'bi-lightning'       => 'Physics',
+                'bi-lightning-charge'       => 'Physics',
                 'bi-heart-pulse'     => 'Biology',
                 'bi-droplet'         => 'Chemistry',
             ])

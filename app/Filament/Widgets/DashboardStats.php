@@ -3,6 +3,7 @@
 namespace App\Filament\Widgets;
 
 use App\Models\Application;
+use App\Models\Email;
 use App\Models\Event;
 use App\Models\Receipt;
 use App\Models\Subject;
@@ -15,30 +16,32 @@ class DashboardStats extends StatsOverviewWidget
     {
         return [
             Stat::make(
-                'Total Receipts Amount',
-                '$ ' . number_format(Receipt::sum('total'), 2)
-            )
-            ->color('warning')
+            'Total Receipts Amount',
+            '$ ' . number_format(Receipt::sum('total'), 2)
+        )
+                ->icon('heroicon-o-banknotes')      
+                ->color('warning')
+                ->description('All-time receipts total'),
 
-            ->description('All-time receipts total'),
+           Stat::make('Emails', Email::count())
+                ->icon('heroicon-o-envelope')
+                ->color('danger')
+                ->description('Number of emails sent'),
+
 
             Stat::make('Receipts', Receipt::count())
                 ->icon('heroicon-o-receipt-refund')
                 ->color('info')
-                 ->description('Number of Receipts Generated'),
+                ->description('Number of Receipts Generated'),
 
-            // Stat::make(
-            //     'Total Emails',
-            //     Email::count()
-            // )
-            // ->description('Emails received'),
+
 
             Stat::make(
                 'Applications',
                 Application::count()
             )
-            ->color('primary')
-            ->description('Submitted applications'),
+                ->color('primary')
+                ->description('Submitted applications'),
 
             Stat::make('Events', Event::count())
                 ->icon('heroicon-o-calendar-days')

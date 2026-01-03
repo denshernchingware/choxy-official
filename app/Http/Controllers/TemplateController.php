@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Application;
+use App\Models\Email;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class TemplateController extends Controller
 {
     // ===============================
-    // CONTACT FORM SUBMISSION
+    // FORM FORM SUBMISSION
     // ===============================
      public function application(Request $request)
     {
@@ -29,11 +33,32 @@ class TemplateController extends Controller
         Application::create($validated);
 
         // return
-        return redirect()
-            ->route('apply')
-            ->withFragment('application')
-            ->with('success', 'Your Application has been submitted successfully!');
+        return redirect()->to(url()->previous() . '#application')
+                     ->with('success', 'Your message has been sent successfully!');
         }
+
+    // ===============================
+    // FORM FORM SUBMISSION
+    // ===============================
+    public function contactSubmit(Request $request)
+    {
+     $validated = $request->validate([
+        'name'                    => 'required|string|min:3',
+        'subject'                 => 'required|string|min:3',
+        'phone'                   => 'required|string|min:7',
+        'email'                   => 'required|email',
+        'comment'                 => 'required|string|min:5',
+     ]);
+
+  // Save to database
+        Email::create($validated);
+
+        // return
+        return redirect()->to(url()->previous() . '#contactSection')
+                     ->with('success', 'Your message has been sent successfully!');
+
+    }
+
     // ===============================
     // PDF DOWNLOAD
     // ===============================
@@ -62,4 +87,46 @@ class TemplateController extends Controller
         );
     }
 
+     //   ===============================
+    //   frontend display
+    //    ===============================
+
+    public function home()
+    {
+        $subjects = Subject::all();
+        $abouts = About::all();
+        return view('frontend.home', compact('abouts', 'subjects'));
+    }
+
+    public function about()
+    {
+        $subjects = Subject::all();
+        $abouts = About::all();
+        return view('frontend.about' ,compact('abouts', 'subjects'));
+    }
+
+    public function contact()
+    {
+        return view('frontend.contact');
+    }
+
+    public function gallery()
+    {
+        return view('frontend.gallery');
+    }
+
+    public function admission()
+    {
+        return view('frontend.admission');
+    }
+
+    public function newsEvents()
+    {
+        return view('frontend.newsEvents');
+    }
+
+    public function schoolLife()
+    {
+        return view('frontend.schoolLife');
+    }
 }
