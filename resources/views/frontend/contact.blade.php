@@ -43,10 +43,7 @@
                 <!-- MAP -->
                 <div class="col-12 sm-mb-30px">
                     <div class="map h-650px md-h-550px sm-h-450px border-radius-6px overflow-hidden">
-                        <iframe width="100%" height="100%" style="border:0; border-radius:6px;" loading="lazy"
-                            allowfullscreen referrerpolicy="no-referrer-when-downgrade"
-                            src="https://www.google.com/maps?q=16.994725259902275,82.21024681509502&hl=en&z=16&output=embed">
-                        </iframe>
+                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d85878.31431037844!2d30.933189328225044!3d-17.96378956381624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a1006e299e8b%3A0xcc9d6fa5e948752e!2sGlen%20Norah%20C%20Masimbi!5e0!3m2!1sen!2sin!4v1767536591251!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
 
@@ -81,7 +78,7 @@
                                 </a>
                             </span>
 
-                            <a href="https://maps.app.goo.gl/xd8w7VUmPUovnKUt7" target="_blank"
+                            <a href="https://maps.app.goo.gl/VeRTvgTVD3ftg2Kj8" target="_blank"
                                 class="btn btn-large btn-dark-gray btn-box-shadow btn-rounded btn-switch-text mt-35px">
                                 <span>
                                     <span class="btn-double-text" data-text="View on Google Map">View on Google

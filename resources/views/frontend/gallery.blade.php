@@ -20,64 +20,49 @@
         </div>
     </section>
     <!-- end page title -->
+<section class="ps-2 pe-2">
+    <div class="container-fluid">
 
+        <ul class="gallery-wrapper grid grid-3col lg-grid-3col md-grid-2col sm-grid-1col gutter-small">
 
-    <section class="ps-2 pe-2">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col sm-p-0">
-                    <div class="row g-3 "
-                        data-justified-options='{ "rowHeight": 500, "maxRowHeight": false, "captions": false, "margins": 15, "waitThumbnailsLoad": true }'
-                        data-anime='{ "el": "childs", "translateY": [0, 0],"opacity": [0,1], "duration": 500, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                        <!-- start gallery item -->
-                        @forelse ($photos as $photo)
-                            <div class="col-12 col-sm-6 col-lg-4">
-                                <div class="gallery-box transition-inner-all">
+            <li class="grid-sizer"></li>
 
-                                    <a href="{{ asset('uploads/' . $photo->image) }}" data-group="lightbox-group-gallery">
+            @forelse ($photos as $photo)
+                <li class="grid-item transition-inner-all">
+                    <div class="gallery-box">
+                    <!-- popup/lightbox kept -->
+                    <a href="{{ asset('uploads/' . $photo->image) }}"
+                       data-group="lightbox-group-gallery" class="lightbox-gallery">
 
-                                        <div class="position-relative bg-dark-gray">
-                                            <img src="{{ asset('uploads/' . $photo->image) }}"
-                                                alt="{{ $photo->title ?? 'Gallery image' }}" class="img-fluid" />
+                        <div class="gallery-box position-relative bg-dark-gray">
+                            <img src="{{ asset('uploads/' . $photo->image) }}"
+                                 alt="{{ $photo->title ?? 'Gallery image' }}"
+                                 class="w-100" />
 
-                                            <div class="d-flex align-items-center justify-content-center gallery-hover">
-                                                <i
-                                                    class="icon feather icon-feather-search icon-very-medium text-white absolute-middle-center"></i>
-
-                                               
-                                            </div>
-                                        </div>
-
-                                    </a>
-
-                                </div>
+                            <div class="d-flex align-items-center justify-content-center gallery-hover">
+                                <i class="icon feather icon-feather-search icon-very-medium text-white absolute-middle-center"></i>
                             </div>
+                        </div>
 
-                        @empty
-                            <!-- No Photos Yet -->
-                            <div class="col-12">
-                                <div class="text-center py-5 bg-light rounded shadow-sm">
-
-                                    <i class="bi bi-images fs-1 text-muted mb-3 d-block"></i>
-
-                                    <h5 class="fw-bold text-dark-gray mb-2">
-                                        No Photos Yet
-                                    </h5>
-
-                                    <p class="text-muted mb-0">
-                                        School activities and memorable moments will appear here once uploaded.
-                                    </p>
-
-                                </div>
-                            </div>
-                        @endforelse
-
-
-
-
+                    </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                </li>
+            @empty
+                <li class="grid-item w-100">
+                    <div class="text-center py-5 bg-light rounded shadow-sm">
+                        <i class="bi bi-images fs-1 text-muted mb-3 d-block"></i>
+                        <h5 class="fw-bold text-dark-gray mb-2">No Photos Yet</h5>
+                        <p class="text-muted mb-0">
+                            School activities and memorable moments will appear here once uploaded.
+                        </p>
+                    </div>
+                </li>
+            @endforelse
+
+        </ul>
+
+    </div>
+</section>
+
+
 @endsection

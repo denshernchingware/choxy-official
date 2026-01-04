@@ -339,7 +339,7 @@
             <h3 class="alt-font text-dark-gray fw-600 ls-minus-3px">
                 Latest Upcoming Events
             </h3>
-            <a href="{{route('newsEvents')}}" class="btn btn-base-color rounded-pill px-4 fw-bold text-black">
+            <a href="{{route('newsEvents')}}" class="btn btn-base-color rounded-pill px-4 fw-bold text-black w-150px">
                 View All
             </a>
         </div>

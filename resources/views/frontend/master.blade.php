@@ -2,19 +2,19 @@
 <html class="no-js" lang="en">
 
 <head>
-    <title>Crafto - The Multipurpose HTML5 Template</title>
+    <title>Choxy Dee Academy</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="author" content="ThemeZaa">
+   <meta name="author" content="Choxy Dee Academy | Website by DMTechnologies">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="description"
-        content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 56+ ready demos.">
+        content="Choxy Dee Academy is a leading private secondary school for Forms 1–4, committed to academic excellence and holistic student development.">
 
     <!-- favicon icon -->
-    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon-57x57.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/apple-touch-icon-72x72.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/apple-touch-icon-114x114.png') }}">
+    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }} " type="image/png>
+    <link rel="apple-touch-icon" href="{{ asset('images/favicon-one.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/favicon-two.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/favicon-three.png') }}">
 
     <!-- google fonts preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -28,9 +28,40 @@
     <link rel="stylesheet" href="{{ asset('demos/elearning/elearning.css') }}" />
 
     <style>
-        .news-text {
-    transition: all 0.3s ease;
+.gallery-wrapper {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
+.grid {
+    position: relative;
+}
+
+.grid-item {
+    width: 33.333%;
+    padding: 8px;
+}
+
+@media (max-width: 992px) {
+    .grid-item {
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .grid-item {
+        width: 100%;
+    }
+}
+
+.gallery-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
     </style>
 
 </head>
