@@ -36,7 +36,7 @@
 </head>
 
 
-<body data-mobile-nav-trigger-alignment="right" data-mobile-nav-style="modern" data-mobile-nav-bg-color="#313e3b">
+<body data-mobile-nav-trigger-alignment="right" data-mobile-nav-style="modern" data-mobile-nav-bg-color="#173d87">
     <!-- start header -->
     <header>
         <!-- start navigation -->
