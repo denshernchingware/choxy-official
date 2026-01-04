@@ -11,6 +11,7 @@ class Receipt extends Model
         'student_name',
         'receipt_date',
         'amount_words',
+        'form',
         'total',
         'is_locked',
     ];

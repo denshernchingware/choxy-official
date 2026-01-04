@@ -26,6 +26,12 @@ class ReceiptForm
                     ->required()
                     ->disabled(fn (?Receipt $record) => $record?->is_locked),
 
+                TextInput::make('form')
+                    ->label('Form/(Class)')
+                    ->required()
+                    ->disabled(fn (?Receipt $record) => $record?->is_locked),
+                    
+
                 TextInput::make('amount_words')
                     ->label('Amount In Words')
                     ->required()

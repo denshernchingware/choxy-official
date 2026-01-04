@@ -26,7 +26,7 @@
                                 <div class="row mb-4">
                                     <div class="col-md-6">
                                         <label for="studentName" class="form-label required">Student Full Name</label>
-                                        <input type="text" class="form-control" id="studentName " name='name'
+                                        <input type="text" class="form-control" id="studentName" name='name'
                                             placeholder="Enter student's full name" required>
                                     </div>
 
@@ -104,7 +104,7 @@
                                     <label class="form-check-label checkbox-text" for="agreement">
                                         <i class="bi bi-info-circle me-1 text-base-color"></i>
                                         By submitting this form, you confirm that all information provided is accurate
-                                        and agree to the school's admission policies.
+                                        and agree to the school's admission policies. <b>(Please note that your application is considered submitted only once you see the success message).</b>
                                     </label>
                                 </div>
 

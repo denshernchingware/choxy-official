@@ -87,10 +87,11 @@
                             <div class="atropos-rotate">
                                 <div class="atropos-inner text-center w-100">
                                     <div data-atropos-offset="-1" class="position-absolute left-0px right-0px ">
-                                        <img src="images/hero.png" alt="">
+                                       <img src="{{ asset('images/hero.png') }}" alt="Hero Image">
                                     </div>
                                     <img data-atropos-offset="1" class="position-relative z-index-9 animation-float"
-                                        src="images/demo-elearning-hero-banner-02.png" alt="">
+     src="{{ asset('images/demo-elearning-hero-banner-02.png') }}" alt="E-learning Hero Banner">
+
                                 </div>
                             </div>
                         </div>
@@ -106,7 +107,8 @@
         style="background-image: url('images/demo-elearning-02.png')">
         <div class="position-absolute right-0px top-30px" data-bottom-top="transform: translateY(80px)"
             data-top-bottom="transform: translateY(-80px)">
-            <img src="images/demo-elearning-04.png" alt="">
+         <img src="{{ asset('images/demo-elearning-04.png') }}" alt="E-learning demo">
+
         </div>
         <div class="container">
             <div class="text-center position-absolute top-minus-40px left-0px right-0px z-index-1 d-none d-md-inline-block"
@@ -144,7 +146,8 @@
                     </a>
                     <div
                         class="d-flex align-items-center fw-500 text-dark-gray w-100 position-absolute md-position-relative bottom-0 left-minus-5px md-mt-15px">
-                        <img src="images/why-us.png" alt=""><span
+                        <img src="{{ asset('images/why-us.png') }}" alt="Why Us">
+<span
                             class="d-inline-block position-relative lh-24">Subjects taught by <span
                                 class="fw-600  text-dark-gray ">experts.</span></span></div>
                 </div>

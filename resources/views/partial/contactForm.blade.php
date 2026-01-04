@@ -77,7 +77,7 @@
                                     <i class="bi bi-journal-text"></i>
                                 </span>
                                 <input type="text" name="subject" class="form-control"
-                                       placeholder="e.g price inquiry" required>
+                                       placeholder="e.g Fees inquiry" required>
                             </div>
                         </div>
 
@@ -99,7 +99,7 @@
                         <div class="col-md-8">
                             <p class="small text-muted mb-0">
                                 We are committed to protecting your privacy. We will never collect
-                                information about you without your explicit consent.
+                                information about you without your explicit consent.<b>(Please note that your email is considered successfully sent only once you see the confirmation message).</b>
                             </p>
                         </div>
 

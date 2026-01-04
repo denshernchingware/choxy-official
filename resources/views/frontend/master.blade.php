@@ -11,7 +11,7 @@
         content="Choxy Dee Academy is a leading private secondary school for Forms 1–4, committed to academic excellence and holistic student development.">
 
     <!-- favicon icon -->
-    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }} " type="image/png>
+    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }} " type="image/png">
     <link rel="apple-touch-icon" href="{{ asset('images/favicon-one.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/favicon-two.png') }}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/favicon-three.png') }}">
@@ -75,9 +75,10 @@
             <div class="container-fluid">
                 <div class="col-auto col-lg-2 me-lg-0 me-auto">
                     <a class="navbar-brand p-0" href="{{ route('home') }}">
-                        <img src="images/logo.png" data-at2x="images/logo.png" alt="" class="default-logo ">
-                        <img src="images/logo.png" data-at2x="images/logo.png" alt="" class="alt-logo w-70px">
-                        <img src="images/logo.png" data-at2x="images/logo.png" alt="" class="mobile-logo ">
+                        <img src="{{ asset('images/logo.png') }}" data-at2x="{{ asset('images/logo.png') }}" alt="" class="default-logo">
+                        <img src="{{ asset('images/logo.png') }}" data-at2x="{{ asset('images/logo.png') }}" alt="" class="alt-logo w-70px">
+                        <img src="{{ asset('images/logo.png') }}" data-at2x="{{ asset('images/logo.png') }}" alt="" class="mobile-logo">
+
                     </a>
                 </div>
 
@@ -166,7 +167,7 @@
                 <div class="col-lg-4">
                     <a href="#">
                         <div class="d-flex align-items-center mb-4">
-                            <img src="images/logo.png" alt="Choxy Dee Academy Logo" class="logo-img me-3">
+                            <img src="{{ asset('images/logo.png') }}" alt="Choxy Dee Academy Logo" class="logo-img me-3">
                         <div>
                             <h5 class="fw-bold text-white mb-0">Choxy Dee Academy</h5>
                             <small class="text-white">Striving for Excellence</small>

@@ -63,13 +63,14 @@
                 <div class="col-md-6 text-center text-lg-start sm-mb-30px sm-mt-20px "
                     data-anime='{ "opacity": [0,1], "duration": 600, "delay": 100, "staggervalue": 300, "easing": "easeOutQuad" }'>
                     <figure class="position-relative m-0">
-                        <img class="border-radius-6px" src="images/marufu.jpg" alt="">
+                       <img class="border-radius-6px" src="{{ asset('images/marufu.jpg') }}" alt="">
+
                         <figcaption
                             class="position-absolute bg-white border-radius-100px p-10px box-shadow-double-large bottom-100px md-bottom-70px xs-bottom-40px left-minus-30px sm-left-0px w-350px md-w-300px text-start last-paragraph-no-margin animation-float">
                             <div class="row align-items-center">
                                 <div class="col-auto pe-0">
                                     <img class="rounded-circle w-80px me-20px md-w-50px xs-w-50px"
-                                        src="images/avtar-24.jpg" alt="" />
+     src="{{ asset('images/avtar-24.jpg') }}" alt="" />
                                 </div>
                                 <div class="col ps-0">
                                     <span
@@ -129,7 +130,8 @@
         style="background-image: url('images/demo-elearning-02.png')">
         <div class="position-absolute right-0px bottom-minus-90px z-index-minus-1 d-none d-md-inline-block"
             data-bottom-top="transform: translateY(-50px)" data-top-bottom="transform: translateY(50px)">
-            <img src="images/demo-elearning-04.png" alt="">
+           <img src="{{ asset('images/demo-elearning-04.png') }}" alt="E-learning demo">
+
         </div>
         <div class="container">
             <div class="row align-items-end justify-content-center mb-8 xs-mb-12">

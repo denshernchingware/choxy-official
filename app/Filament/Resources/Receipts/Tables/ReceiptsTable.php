@@ -19,15 +19,19 @@ class ReceiptsTable
     public static function configure(Table $table): Table
     {
         return $table
-          ->defaultSort('created_at', 'desc')
-            ->columns([
-            TextColumn::make('receipt_number')
+    ->defaultSort('created_at', 'desc')
+    ->columns([
+    TextColumn::make('receipt_number')
         ->label('Receipt No')
         ->searchable()
-        ->sortable(), // works correctly with 0001 format
+        ->sortable(),
 
     TextColumn::make('student_name')
         ->label('Student')
+        ->searchable(),
+
+     TextColumn::make('form')
+        ->label('Form(Class)')
         ->searchable(),
 
     TextColumn::make('receipt_date')
@@ -37,7 +41,7 @@ class ReceiptsTable
 
     TextColumn::make('total')
         ->label('Total')
-        ->money('USD')   // 👈 better than numeric()
+        ->money('USD')
         ->sortable(),
 
     IconColumn::make('is_locked')

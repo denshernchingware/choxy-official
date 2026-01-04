@@ -65,9 +65,9 @@
     </section>
 
     <section class="position-relative pt-0 half-section overflow-hidden">
-        <img src="images/demo-data-analysis-bg-06.png" class="position-absolute top-0px left-0px"
+        <img src="{{ asset('images/demo-data-analysis-bg-06.png') }}" class="position-absolute top-0px left-0px"
             data-bottom-top="transform: translateY(150px)" data-top-bottom="transform: translateY(-150px)" alt="" />
-        <img src="images/demo-data-analysis-bg-07.png" class="position-absolute top-10 right-0px"
+        <img src="{{ asset('images/demo-data-analysis-bg-07.png') }}" class="position-absolute top-10 right-0px"
             data-bottom-top="transform: translateY(150px)" data-top-bottom="transform: translateY(-150px)" alt="" />
         <div class="container position-relative z-index-1">
             <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center mb-3"

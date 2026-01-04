@@ -28,12 +28,12 @@ class TemplateController extends Controller
         'name'                    => 'required|string|min:3',
         'date_of_birth'           => 'required|date',
         'gender'                  => 'required|in:Male,Female,Other',
-        'previous_school'         => 'required|string|min:3',
-        'guardian_name'           => 'required|string|min:3',
-        'phone'                   => 'required|string|min:7',
+        'previous_school'         => 'required|string',
+        'guardian_name'           => 'required|string',
+        'phone'                   => 'required|string',
         'email'                   => 'nullable|email',
         'results'                 => 'required|integer|min:6|max:20',
-        'address'                 => 'required|string|min:5',
+        'address'                 => 'required|string',
         'additional_information'  => 'nullable|string|min:3',
          ]);
          // Save to database

@@ -81,7 +81,7 @@
         .amount-words {
             font-weight: bold;
             color: #003366;
-            text-transform: uppercase;
+
         }
 
         /* Items table */
@@ -210,23 +210,28 @@
         <table class="info-table">
             <tr>
                 <td width="50%">
-                    <strong>Contact Details</strong>
+                    <strong>CONTACT DETAILS</strong>
                     +263 775 746 617<br>
+                    +263 778 550 367<br>
                     +263 719 746 617<br>
-                    info@choxydee.ac.zw
+                    info@choxydeeacademy.co.zw
                 </td>
                 <td width="50%">
-                    <strong>Date</strong>
+                    <strong>DATE</strong>
                     {{ \Carbon\Carbon::parse($receipt->receipt_date)->format('d F Y') }}
+                </td>
+                <td width="">
+                    <strong>FORM</strong>
+                    {{$receipt->form}}
                 </td>
             </tr>
             <tr>
                 <td>
-                    <strong>Received From</strong>
+                    <strong>RECEIVED FROM</strong>
                     {{ $receipt->student_name }}
                 </td>
                 <td class="amount-words">
-                    <strong>Amount in Words</strong>
+                    <strong>AMOUNT IN WORDS</strong>
                     <span class="amt-cl"> {{ strtoupper($receipt->amount_words) }} </span>
                 </td>
             </tr>
