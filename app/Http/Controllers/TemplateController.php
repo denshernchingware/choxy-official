@@ -45,7 +45,7 @@ class TemplateController extends Controller
         }
 
     // ===============================
-    // FORM FORM SUBMISSION
+    // FORM SUBMISSION
     // ===============================
     public function contactSubmit(Request $request)
     {
@@ -87,7 +87,7 @@ class TemplateController extends Controller
     }
     public function download(Application $application)
     {
-        $pdf = Pdf::loadView('application.generate-pdf', [
+        $pdf = pdf::loadView('application.generate-pdf', [
             'title' => 'Application Details',
             'application' => [$application], // keeps @foreach working
         ])->setPaper('A4', 'portrait');

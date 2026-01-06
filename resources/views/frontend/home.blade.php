@@ -213,7 +213,7 @@
                 <!-- Image Column -->
                   @foreach ($abouts as $about)
     <div class="col-lg-6 order-lg-1 order-1">
-        <div class="img-container position-relative">
+        <div class="img-container position-relative" style="box-shadow: none">
             <img
                 src="{{ asset('uploads/' . $about->images) }}"
                 alt="Happy students at Choxy Dee Academy"
@@ -342,8 +342,8 @@
             <h3 class="alt-font text-dark-gray fw-600 ls-minus-3px">
                 Latest Upcoming Events
             </h3>
-            <a href="{{route('newsEvents')}}" class="btn btn-base-color rounded-pill px-4 fw-bold text-black w-150px">
-                View All
+           <a href="{{route('newsEvents')}}" class="text-base-color fw-bold text-decoration-none w-150px">
+                View All →
             </a>
         </div>
 
